@@ -11,33 +11,36 @@ GearItem.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
+    general_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    artist: {
+    product_name: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
-    exhibition_date: {
-      type: DataTypes.DATE,
-      allowNull: false,
+    weight: {
+      type: DataTypes.DECIMAL(5, 2),
     },
-    filename: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    price: {
+      type: DataTypes.DECIMAL,
     },
     description: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
-    gallery_id: {
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'gallery',
+        model: 'user',
         key: 'id',
       },
     },
+    trip_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'trip',
+        key: 'id',
+      }
+    }
   },
   {
     sequelize,

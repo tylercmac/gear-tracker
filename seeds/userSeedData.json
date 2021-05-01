@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Bob hiker",
+    "email": "bob@hiking.com",
+    "password": "password"
+  },
+  {
+    "name": "Jim Climber",
+    "email": "jim@climbing.com",
+    "password": "password"
+  },
+  {
+    "name": "Sarah Explorer",
+    "email": "sarah@exploring.com",
+    "password": "password"
+  }
+]
