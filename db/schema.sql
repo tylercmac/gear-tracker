@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS backpacker_db;
+DROP DATABASE IF EXISTS geartracker_db;
 
-CREATE DATABASE backpacker_db;
+CREATE DATABASE geartracker_db;

@@ -18,7 +18,7 @@ GearItem.init(
     product_name: {
       type: DataTypes.STRING,
     },
-    weight: {
+    weight_oz: {
       type: DataTypes.DECIMAL(5, 2),
     },
     price: {
