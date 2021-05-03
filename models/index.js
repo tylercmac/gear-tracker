@@ -16,6 +16,10 @@ Trip.hasMany(GearItem, {
   foreignKey: 'trip_id'
 })
 
+Trip.belongsTo(User, {
+  foreignKey: 'user_id',
+})
+
 GearItem.belongsTo(User, {
   foreignKey: 'user_id',
 });

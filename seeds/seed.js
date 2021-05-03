@@ -15,13 +15,14 @@ const seedDatabase = async () => {
   
   const gear = await GearItem.bulkCreate(gearItemSeedData);
 
-  // // randomly assign trip to user for seed data
+  // randomly assign trip to user for seed data
   for (const trip of trips) {
     trip.user_id = users[Math.floor(Math.random() * users.length)].id
     console.log('trip ui', trip.user_id)
     await trip.save();
   }
 
+  // randomly assign gear to user and trip for seed data
   for (const  gearItem of gear) {
       gearItem.user_id = users[Math.floor(Math.random() * users.length)].id,
       gearItem.trip_id = trips[Math.floor(Math.random() * users.length)].id
