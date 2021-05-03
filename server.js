@@ -35,17 +35,6 @@ app.set('view engine', 'handlebars');
 
 app.use(routes);
 
-app.get('/', (req,res) => {
-  res.send('Server linked!')
-  res.render('index');
-});
-
-
-
-app.get('/profile', (req, res)=>{
-  res.render("profile");   
-})
-
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
