@@ -11,7 +11,6 @@ router.get("/dashboard", (req, res) => {
   if (!req.session.user) {
       return res.redirect("/")
   } else {
-    console.log('route reached!')
       res.render("dashboard", req.session.user)
   }
 })

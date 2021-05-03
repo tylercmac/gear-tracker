@@ -1,0 +1,39 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li><a href="#">Trips</a></li>
+                <li><a href="#">Browse Trails</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<h2 class="title">Welcome to GearWise</h2>
+
+
+<div id="checklist" class="checklist">
+    <h3>Gear Bank</h3>
+    <input type="checkbox" id="gear" placeholder="My Gear">
+    <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+    <h3>Pack my Bag</h3>
+<form id="bag">
+    <input type="text" name="category" id="category" placeholder="category">
+    <br>
+    <button id='addCategory'></button>
+    <br>
+    <input type="text" name="item" id="item" placeholder="item">
+    <br>
+    <button id='addItem'></button>
+    <br>
+    <input type="text" name="description" id="description" placeholder="description">
+    <br>
+    <input type="text" name="weight" id="weight" placeholder="weight">
+</form>
+
+    <h3>My Pack</h3>
+    <div id="piechart"></div>
