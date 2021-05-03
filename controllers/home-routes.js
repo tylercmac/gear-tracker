@@ -1,2 +1,4 @@
 const router = require('express').Router();
-const { Trip, GearItem } = require('../../models');
+const { Trip, GearItem } = require('../models');
+
+module.exports = router;

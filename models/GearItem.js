@@ -30,14 +30,14 @@ GearItem.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
+        model: 'User',
         key: 'id',
       },
     },
     trip_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'trip',
+        model: 'Trip',
         key: 'id',
       }
     }
@@ -46,7 +46,7 @@ GearItem.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'gearitem',
+    modelName: 'GearItem',
   }
 );
 

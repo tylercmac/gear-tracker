@@ -36,6 +36,7 @@ app.set('view engine', 'handlebars');
 app.use(routes);
 
 app.get('/', (req,res) => {
+  res.send('Server linked!')
   res.render('index');
 });
 

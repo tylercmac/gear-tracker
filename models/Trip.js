@@ -36,7 +36,7 @@ Trip.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
+        model: 'User',
         key: 'id',
       },
     },
@@ -46,7 +46,7 @@ Trip.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'trip',
+    modelName: 'Trip',
   }
 );
 

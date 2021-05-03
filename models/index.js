@@ -20,8 +20,8 @@ GearItem.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
-GearItem.belongsToMany(Trip, {
-  foreignKey: 'trip_id'
+GearItem.belongsTo(Trip, {
+  foreignKey: 'trip_id',
 })
 
 module.exports = { User, Trip, GearItem };
