@@ -48,3 +48,19 @@ document.querySelector("#signupForm").addEventListener("submit",event=>{
       }
   })
 })
+
+document.querySelector("#logoutButton").addEventListener("click", event=>{
+  event.preventDefault();
+  fetch("/portal/logout", {
+    method: 'GET',
+  }).then(res => {
+    if(res.ok) {
+      alert("Logged out successfully!")
+      location.replace("/")
+    } else {
+      alert("You are not logged in!")
+      console.log(res);
+      
+    }
+  })
+})
