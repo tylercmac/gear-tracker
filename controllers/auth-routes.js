@@ -9,6 +9,7 @@ router.get('/sessiondata', (req, res) => {
 
 // Create new profile
 router.post('/new', (req, res) => {
+    console.log('route reached')
     User.create({
             username: req.body.username,
             email: req.body.email,
@@ -28,6 +29,7 @@ router.post('/new', (req, res) => {
 
 // Login to existing profile
 router.post('/login', (req, res) => {
+    console.log('route reached!')
     User.findOne({
         where: {
             email: req.body.email

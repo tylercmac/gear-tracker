@@ -5,7 +5,7 @@ document.querySelector("#loginForm").addEventListener("submit",event=>{
       password:document.querySelector("#loginPassword").value,
   }
   console.log(fetchObj);
-  fetch("/login",{
+  fetch("/portal/login",{
       method:"POST",
       body:JSON.stringify(fetchObj),
       headers:{
@@ -31,7 +31,7 @@ document.querySelector("#signupForm").addEventListener("submit",event=>{
       username:document.querySelector("#signupUsername").value,
   }
   console.log(fetchObj);
-  fetch("/new",{
+  fetch("/portal/new",{
       method:"POST",
       body:JSON.stringify(fetchObj),
       headers:{

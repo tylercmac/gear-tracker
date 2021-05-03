@@ -22,6 +22,8 @@ const seedDatabase = async () => {
     await trip.save();
   }
 
+  
+
   // randomly assign gear to user and trip for seed data
   for (const  gearItem of gear) {
       gearItem.user_id = users[Math.floor(Math.random() * users.length)].id,
@@ -33,5 +35,6 @@ const seedDatabase = async () => {
 
   process.exit(0);
 };
+
 
 seedDatabase();
