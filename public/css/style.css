@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.switchColor{
+    
+    color:#51646b;
+}
+
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.greyHeading{
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-top: 15px;
+    background: #51646b;
+    color: #c57a3c;
+}
+
+#signupForm{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginForm{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
