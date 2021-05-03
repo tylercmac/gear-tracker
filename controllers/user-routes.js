@@ -3,7 +3,7 @@ const User = require('../models/User.js');
 const bcrypt = require('bcrypt');
 
 // CREATE new user
-router.get('/new', (req, res) => {
+router.get('/new', async (req, res) => {
     try {
         const dbUserData = await User.create({
             username: req.body.name,
