@@ -47,7 +47,8 @@ router.post('/login', async (req, res) => {
                 email: foundUser.email,
                 username: foundUser.username
             };
-            return res.json(foundUser)
+            console.log(req.session)
+            return res.json(req.session)
         }
     } catch (err) {
         req.session.destroy();
@@ -57,9 +58,12 @@ router.post('/login', async (req, res) => {
 });
 
 // Logout
-router.post('/logout', (req, res) => {
-    req.session.destroy();
-    res.send("Successfully logged out!")
-});
+// router.post('/logout', (req, res) => {
+//     req.session.destroy();
+//     res.send("Successfully logged out!")
+// });
 
+router.get('/logout', (req, res) => {
+    req.session.destroy();
+});
 module.exports = router;
