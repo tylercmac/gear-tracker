@@ -1,16 +1,16 @@
 [
   {
-    "name": "Bob hiker",
+    "username": "Bobhikes",
     "email": "bob@hiking.com",
     "password": "password"
   },
   {
-    "name": "Jim Climber",
+    "username": "Jimclimbs",
     "email": "jim@climbing.com",
     "password": "password"
   },
   {
-    "name": "Sarah Explorer",
+    "username": "Sarahexplores",
     "email": "sarah@exploring.com",
     "password": "password"
   }
