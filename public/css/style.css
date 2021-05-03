@@ -1,18 +1,46 @@
 *{
     margin: 0;
     padding: 0;
+    font-family:Arial, Helvetica, sans-serif;
 }
+
+
 
 .switchColor{
     
-    color:#51646b;
+    color: #c57a3c;
 }
 
+.sameAsHeader{
+    background: #51646b;
+    color: #c57a3c;
+}
+
+.indexBtn{
+    background-color: #b8a6a0;
+    color: white;
+    padding: 2px;
+    margin-right: 4px;
+    border-radius: 4px;
+}
+
+
+
+.main{
+    height: 100vh;
+    opacity: 0.5px;
+}
 
 .center{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.image{
+    background-image: url("/images/signUpPhoto.JPG");
+    background-size: cover;
+    height: inherit;
 }
 
 .greyHeading{
@@ -27,10 +55,16 @@
     display: grid;
     justify-content: center;
     align-items: center;
+    height: 30vh;
 }
 
 #loginForm{
-    display: grid;
-    justify-content: center;
+    display: flex;
+    justify-content: flex-end;
     align-items: center;
+    background-color: #51646b;
+}
+
+#loginEmail{
+    margin-right: 8px;
 }
