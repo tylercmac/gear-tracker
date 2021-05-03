@@ -1,10 +1,10 @@
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
                 <li><a href="#">Trips</a></li>
                 <li><a href="#">Browse Trails</a></li>
+                <button id='logoutbtn'>Logout</button>
             </ul>
         </div>
     </div>
@@ -16,11 +16,18 @@
 
 <div id="checklist" class="checklist">
     <h3>Gear Bank</h3>
+    <br>
+    {{#each userGear as |gear|}}
+    <h4>{{gear.general_name}}</h4>
+    <h4>{{gear.product_name}}</h4>
+    <h4>{{gear.description}}</h4>
+    <br>
+    {{/each}}
     <input type="checkbox" id="gear" placeholder="My Gear">
     <span onclick="newElement()" class="addBtn">Add</span>
 </div>
 
-    <h3>Pack my Bag</h3>
+<h3>Pack my Bag</h3>
 <form id="bag">
     <input type="text" name="category" id="category" placeholder="category">
     <br>
@@ -35,5 +42,7 @@
     <input type="text" name="weight" id="weight" placeholder="weight">
 </form>
 
-    <h3>My Pack</h3>
-    <div id="piechart"></div>
+<h3>My Pack</h3>
+<div id="piechart"></div>
+
+<script src="js/dashscript.js"></script>
