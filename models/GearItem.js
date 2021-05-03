@@ -18,14 +18,20 @@ GearItem.init(
     product_name: {
       type: DataTypes.STRING,
     },
+    description: {
+      type: DataTypes.STRING,
+    },
     weight_oz: {
       type: DataTypes.DECIMAL(5, 2),
+      defaultValue: 0
     },
     price: {
       type: DataTypes.DECIMAL,
+      defaultValue: 0
     },
-    description: {
-      type: DataTypes.STRING,
+    quantity: {
+      type: DataTypes.INTEGER,
+      defaultValue: 1
     },
     user_id: {
       type: DataTypes.INTEGER,
