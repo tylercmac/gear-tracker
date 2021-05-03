@@ -3,7 +3,11 @@ const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require("bcrypt");
 
-router.get("/dashboard", (req, res) => {
+router.get('/', async (req, res) => {
+  res.render('index')
+})
+
+router.get("/dashboard", (req, res) => { 
   if (!req.session.user) {
       return res.redirect("/")
   } else {
