@@ -14,7 +14,7 @@ document.querySelector("#loginForm").addEventListener("submit",event=>{
   }).then(res=>{
       console.log(res);
       if(res.ok){
-          console.log("logged in successfully!")
+          alert("logged in successfully!")
           location.replace("/dashboard")
       } else {
           alert("log in failed!")
