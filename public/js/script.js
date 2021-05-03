@@ -14,7 +14,7 @@ document.querySelector("#loginForm").addEventListener("submit",event=>{
   }).then(res=>{
       console.log(res);
       if(res.ok){
-          console.log("logged in successfully!")
+          alert("logged in successfully!")
           location.replace("/dashboard")
       } else {
           alert("log in failed!")
@@ -46,5 +46,21 @@ document.querySelector("#signupForm").addEventListener("submit",event=>{
           alert("signup failed!")
           location.reload();
       }
+  })
+})
+
+document.querySelector("#logoutButton").addEventListener("click", event=>{
+  event.preventDefault();
+  fetch("/portal/logout", {
+    method: 'GET',
+  }).then(res => {
+    if(res.ok) {
+      alert("Logged out successfully!")
+      location.replace("/")
+    } else {
+      alert("You are not logged in!")
+      console.log(res);
+      
+    }
   })
 })
