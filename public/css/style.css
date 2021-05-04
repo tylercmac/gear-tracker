@@ -4,6 +4,26 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 
+#mainTrips{
+    display: flex;
+    flex-direction: column;
+}
+
+#tripsPage{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+aside{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
 
 
 .switchColor{
@@ -68,3 +88,25 @@
 #loginEmail{
     margin-right: 8px;
 }
+
+.white{
+    color: #51646b;
+}
+
+.tripsBtn{
+    background-color: #b8a6a0;
+    color: #51646b;
+    padding: 10px;
+    border-radius: 4px;
+
+}
+
+.tripsH2{
+    color: #647c7c;
+}
+
+.myTrips{
+    flex: 2;
+    margin-left: 250px;
+}
+
