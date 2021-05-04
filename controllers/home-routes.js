@@ -45,7 +45,8 @@ router.get("/trips/:id", apiAuth, async (req, res) => {
     const specTripData = await Trip.findByPk( { 
       where: { 
         id: req.params.id
-      }
+      },
+      include: [ { model: GearItem } ]
     })
     const specTrip = specTripData.get({ plain: true })
     

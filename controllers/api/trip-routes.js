@@ -30,4 +30,22 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+
+router.post('/', async (req, res) => {
+  try {
+    const newTrip = await Trip.create({
+      name: req.body.name,
+      location: req.body.location,
+      description: req.body.description,
+      starting_date: req.body.starting_date,
+      ending_date: req.body.ending_date,
+      distance_mi: req.body.distance_mi,
+      user_id: req.session.user.id
+    });
+    res.status(200).json(newTrip);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
 module.exports = router;
