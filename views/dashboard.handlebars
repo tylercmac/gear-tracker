@@ -19,10 +19,11 @@
     <br>
     {{#each userGear as |gear|}}
     <div class="gearitem" data-id={{gear.id}}>
+        <button class="addToTrip">Add to trip</button>
         <button class="deletebtn">delete</button>
-        <h4>{{gear.general_name}}</h4>
-        <h4>{{gear.product_name}}</h4>
-        <h4>{{gear.description}}</h4>
+        <h4 id="generalName">{{gear.general_name}}</h4>
+        <h4 id="productName">{{gear.product_name}}</h4>
+        <h4 id="description">{{gear.description}}</h4>
         <br>
     </div>
     {{/each}}
@@ -51,6 +52,7 @@
 </form>
 
 <h3>My Pack</h3>
+<ul class="tripGearList"></ul>
 <div id="piechart"></div>
 
 <script src="js/dashscript.js"></script>
