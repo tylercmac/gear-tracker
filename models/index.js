@@ -7,15 +7,6 @@ User.hasMany(Trip, {
   onDelete: 'CASCADE',
 });
 
-User.hasMany(GearItem, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE',
-})
-
-Trip.hasMany(GearItem, {
-  foreignKey: 'trip_id'
-})
-
 Trip.belongsTo(User, {
   foreignKey: 'user_id',
 })
@@ -24,8 +15,17 @@ GearItem.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
-GearItem.belongsTo(Trip, {
-  foreignKey: 'trip_id',
+User.hasMany(GearItem, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE',
+})
+
+Trip.belongsToMany(GearItem, {
+  through: 'TripGear'
+})
+
+GearItem.belongsToMany(Trip, {
+  through: 'TripGear'
 })
 
 module.exports = { User, Trip, GearItem };
