@@ -1,4 +1,4 @@
-const session = require('express-session');
+// const session = require('express-session');
 
 document.querySelector("#loginForm").addEventListener("submit", event => {
     event.preventDefault();
