@@ -18,10 +18,13 @@
     <h3>Gear Bank</h3>
     <br>
     {{#each userGear as |gear|}}
-    <h4>{{gear.general_name}}</h4>
-    <h4>{{gear.product_name}}</h4>
-    <h4>{{gear.description}}</h4>
-    <br>
+    <div class="gearitem" data-id={{gear.id}}>
+        <button class="deletebtn">delete</button>
+        <h4>{{gear.general_name}}</h4>
+        <h4>{{gear.product_name}}</h4>
+        <h4>{{gear.description}}</h4>
+        <br>
+    </div>
     {{/each}}
     <input type="checkbox" id="gear" placeholder="My Gear">
     <span onclick="newElement()" class="addBtn">Add</span>
@@ -35,11 +38,16 @@
     <br>
     <input type="text" name="item" id="item" placeholder="item">
     <br>
+    <input type="text" name="prodname" id="prodname" placeholder="product name">
+    <br>
     <button id='addItem'></button>
     <br>
     <input type="text" name="description" id="description" placeholder="description">
     <br>
     <input type="text" name="weight" id="weight" placeholder="weight">
+    <br>
+    <input type="text" name="price" id="price" placeholder="price">
+    <button>Add to pack</button>
 </form>
 
 <h3>My Pack</h3>
