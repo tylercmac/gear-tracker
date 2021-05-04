@@ -64,7 +64,7 @@ document.querySelector("#bag").addEventListener("submit", event => {
           console.log("added successfully!")
           location.reload();
       } else {
-          alert("signup failed!")
+          alert("couldn't add item!")
           location.reload();
       }
   })

@@ -40,5 +40,22 @@ router.get("/trips", apiAuth, async (req, res) => {
   }
 })
 
+router.get("/trips/:id", apiAuth, async (req, res) => {
+  try {
+    const specTripData = await Trip.findByPk( { 
+      where: { 
+        id: req.params.id
+      }
+    })
+    const specTrip = specTripData.get({ plain: true })
+    
+    res.render("tripdisplay", { specTrip })
+  } catch (err) {
+    res.json(err);
+  }
+})
+
+
+
 module.exports = router;
 
