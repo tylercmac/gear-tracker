@@ -1,4 +1,3 @@
-// const session = require('express-session');
 
 document.querySelector("#loginForm").addEventListener("submit", event => {
     event.preventDefault();
@@ -50,3 +49,4 @@ document.querySelector("#signupForm").addEventListener("submit", event => {
         }
     })
 })
+

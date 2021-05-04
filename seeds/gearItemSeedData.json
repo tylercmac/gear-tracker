@@ -4,76 +4,88 @@
     "product_name": "Osprey Exos 48",
     "weight_oz": 37.2,
     "price": 140,
-    "description": "Love this pack! Great ventilation on the back ,and comfy suspension system."
+    "description": "Love this pack! Great ventilation on the back ,and comfy suspension system.",
+    "user_id": 1
   },
   {
     "general_name": "Backpack",
     "product_name": "Pa'lante Simple V2",
     "weight_oz": 13.05,
     "price": 200,
-    "description": "Minimal, frameless, Xpac material, 35L capacity"
+    "description": "Minimal, frameless, Xpac material, 35L capacity",
+    "user_id": 2
   },
   {
     "general_name": "Tent",
     "product_name": "Big Agnes Tiger Wall 2P",
     "weight_oz": 40,
     "price": 300,
-    "description": "My comfy 2 person tent, freestanding with fly!"
+    "description": "My comfy 2 person tent, freestanding with fly!",
+    "user_id": 1
   },
   {
     "general_name": "Tent",
     "product_name": "Zpacks Triplex",
     "weight_oz": 21.5,
     "price": 700,
-    "description": "Absolute bonkers light for 3 people. Nonfreestanding."
+    "description": "Absolute bonkers light for 3 people. Nonfreestanding.",
+    "user_id": 1
   },
   {
     "general_name": "Sleeping Bag",
     "product_name": "Katabatic Alsek",
     "weight_oz": 24.2,
     "price": 410,
-    "description": "Best cottage company sleeping quilt out there, comfrotable down to 17 degrees."
+    "description": "Best cottage company sleeping quilt out there, comfrotable down to 17 degrees.",
+    "user_id": 1
   },
   {
     "general_name": "Rain Jacket",
     "product_name": "Addidas Terex shell",
     "weight_oz": 9,
     "price": 120,
-    "description": "A disconinued line, fantastic breathable waterproof shell"
+    "description": "A disconinued line, fantastic breathable waterproof shell",
+    "user_id": 3
+
   },
   {
     "general_name": "Sleeping Pad",
     "product_name": "NeoAir XTherm",
     "weight_oz": 16,
     "price": 180,
-    "description": "Well insulated and weighs so very little. Very crinkly though."
+    "description": "Well insulated and weighs so very little. Very crinkly though.",
+    "user_id": 3
   },
   {
     "general_name": "Water Bottle",
     "product_name": "SmartWater 2L",
     "weight_oz": 1.2,
     "price": 1.50,
-    "description": "The best backpacking water bottle. Get the sports cap."
+    "description": "The best backpacking water bottle. Get the sports cap.",
+    "user_id": 3
   },
   {
     "general_name": "Toothbrush",
     "product_name": "Litesmith Thumbprint",
     "weight_oz": 0.2,
     "price": 2,
-    "description": "Great little brush for your dental heigene."
+    "description": "Great little brush for your dental heigene.",
+    "user_id": 2
   },
   {
     "general_name": "Blister tape",
     "product_name": "Leukotape",
     "weight_oz": 0.1,
     "price": 12,
-    "description": "The best for your blister prevention and maintenence."
+    "description": "The best for your blister prevention and maintenence.",
+    "user_id": 2
   },
   {
     "general_name": "Compass",
     "product_name": "Suunto Button",
     "weight_oz": 0.1,
     "price": 10,
-    "description": "Tiny little button compass for the shoulder strap"
+    "description": "Tiny little button compass for the shoulder strap",
+    "user_id": 2
   }
 ]
