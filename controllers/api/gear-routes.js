@@ -33,8 +33,33 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const newGear = await GearItem.create(req.body);
+    const newGear = await GearItem.create({
+      general_name: req.body.general_name,
+      product_name: req.body.product_name,
+      description: req.body.description,
+      weight_oz: req.body.weight_oz,
+      price: req.body.price,
+      user_id: req.session.user.id
+    });
     res.status(200).json(newGear);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
+router.delete('/:id', async (req, res) => {
+  try {
+    const removedItem = await GearItem.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+    res.status(200).json(removedItem)
+
+    if (!removedItem) {
+      res.status(404).json({message: 'item not found'})
+      
+    }
   } catch (err) {
     res.status(500).json(err);
   }
