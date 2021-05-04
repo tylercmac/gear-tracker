@@ -16,23 +16,27 @@ const seedDatabase = async () => {
   
   const gear = await GearItem.bulkCreate(gearItemSeedData);
 
-  // randomly assign trip to user for seed data
-  for (const trip of trips) {
-    trip.user_id = users[Math.floor(Math.random() * users.length)].id
-    console.log('trip ui', trip.user_id)
-    await trip.save();
-  }
+  let firstTrip = trips[0]
+
+  await trips[0].addGearItem(1)
+  await trips[0].addGearItem(3)
+  await trips[0].addGearItem(4)
+ 
+  await trips[1].addGearItem(1)
+  await trips[1].addGearItem(3)
+  await trips[1].addGearItem(4)
+
+  await trips[2].addGearItem(2)
+  await trips[2].addGearItem(11)
+  await trips[2].addGearItem(9)
+  await trips[2].addGearItem(10)
+  await trips[3].addGearItem(10)
+
+  await trips[4].addGearItem(6)
+  await trips[4].addGearItem(7)
+  await trips[4].addGearItem(8)
 
   
-
-  // randomly assign gear to user and trip for seed data
-  for (const  gearItem of gear) {
-      gearItem.user_id = users[Math.floor(Math.random() * users.length)].id,
-      gearItem.trip_id = trips[Math.floor(Math.random() * users.length)].id
-      console.log('gear ui', gearItem.user_id)
-      console.log('gear ti', gearItem.trip_id)
-      await gearItem.save();
-  }
 
   process.exit(0);
 };

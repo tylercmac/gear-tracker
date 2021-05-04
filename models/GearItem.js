@@ -40,13 +40,6 @@ GearItem.init(
         key: 'id',
       },
     },
-    trip_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'Trip',
-        key: 'id',
-      }
-    }
   },
   {
     sequelize,
