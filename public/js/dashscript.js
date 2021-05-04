@@ -15,6 +15,38 @@ const logoutUser = () => {
   })
 }
 
+// When item is chosen from gear bank, it will populate spot on current trip gear list
+const addToTrip = (e) => {
+  const currentItemId = e.target.parentElement.dataset.id;
+  const generalName = document.getElementById('generalName').textContent;
+  const productName = document.getElementById('productName').textContent;
+  const description = document.getElementById('description').textContent;
+  const tripGearList = document.querySelector('.tripGearList');
+
+  // Will create a fetch request here to post/associate this item to current trip that is being planned
+
+  // Create a list element to display item
+  const newItem = document.createElement('li');
+  // populate list item with info
+  newItem.textContent = `${generalName}, ${productName}, ${description}` 
+  // Create 'remove' button
+  const removeBtn = document.createElement('button');
+  removeBtn.textContent = 'Remove';
+  // Gives it a remove function
+  removeBtn.addEventListener('click', (e) => {
+    const listItem = e.target.parentElement;
+    tripGearList.removeChild(listItem);
+  })
+  // Give it an attribute with the item ID for later access
+  newItem.setAttribute('data-id', currentItemId)
+  // Add the remove button to list item
+  newItem.append(removeBtn)
+  // Add the element to the trip gear list
+  tripGearList.append(newItem);
+
+}
+
+
 // this will find the parent gear element and fetch request to remove it from API
 const deleteItem = (e) => {
   e.stopPropagation();
@@ -40,6 +72,39 @@ const deleteItem = (e) => {
   })
 }
 
+// Add a trip form with fetch req to server
+// document.querySelector("#trip-form").addEventListener("submit", event => {
+//   console.log('trip submitted');
+  
+//   event.preventDefault();
+//   const fetchObj = {
+//       name: document.querySelector("#name").value,
+//       location: document.querySelector("#location").value,
+//       description: document.querySelector("#description").value,
+//       starting_date: document.querySelector("#startdate").value,
+//       ending_date: document.querySelector("#enddate").value,
+//       distance_mi: document.querySelector("#distance").value,
+//   }
+//   console.log(fetchObj);
+//   fetch("/api/trips", {
+//       method: "POST",
+//       body: JSON.stringify(fetchObj),
+//       headers: {
+//           "Content-Type": "application/json"
+//       }
+//   }).then(res => {
+//       console.log(res);
+//       if (res.ok) {
+//           console.log("added successfully!")
+//           location.reload();
+//       } else {
+//           alert("couldn't add trip!")
+//           location.reload();
+//       }
+//   })
+// })
+
+// Add a gear item to gear bank through this form
 document.querySelector("#bag").addEventListener("submit", event => {
   console.log('form submitted');
   
@@ -70,7 +135,18 @@ document.querySelector("#bag").addEventListener("submit", event => {
   })
 })
 
+// Save trip with gear items in it?
+// document.querySelector("#saveTrip").addEventListener('click', event => {
+//   event.preventDefault();
+  
+  
+  
+// })
+
 document.querySelector("#logoutbtn").addEventListener("click", logoutUser) 
 if (document.querySelector(".deletebtn")) {
   document.querySelector(".deletebtn").addEventListener("click", deleteItem);
 } 
+if (document.querySelector(".addToTrip")) {
+  document.querySelector(".addToTrip").addEventListener("click", addToTrip);
+}
