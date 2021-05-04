@@ -28,7 +28,7 @@
 
 .main{
     height: 100vh;
-    opacity: 0.5px;
+    
 }
 
 .center{
@@ -38,7 +38,7 @@
 }
 
 .image{
-    background-image: url("/images/signUpPhoto.JPG");
+    background-image: url("/images/Mountian_cover_opacity_lower.JPG");
     background-size: cover;
     height: inherit;
 }
