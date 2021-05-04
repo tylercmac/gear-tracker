@@ -40,6 +40,13 @@ Trip.init(
         key: 'id',
       },
     },
+    // gear_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'GearItem',
+    //     key: 'id',
+    //   },
+    // },
   },
   {
     sequelize,
