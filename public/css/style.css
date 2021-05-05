@@ -89,14 +89,13 @@ aside{
     margin-right: 8px;
 }
 
-<<<<<<< HEAD
 .white{
-    color: #51646b;
+    color: white;
 }
 
 .tripsBtn{
     background-color: #b8a6a0;
-    color: #51646b;
+    color: white;
     padding: 10px;
     border-radius: 4px;
 
@@ -111,54 +110,3 @@ aside{
     margin-left: 250px;
 }
 
-=======
-#main-container {
-    display:flex;  
-    height: 100vh
-}
-
-#side-nav {
-    flex:1;
-    max-width: 250px;
-    background-color: #b8a6a0;
-}
-
-.side-bar a {
-    padding: 6px 6px 6px 32px;
-    font-size: 30px;
-    color: #c57a3c;
-    display: block;
-}
-
-.side-bar a:hover {
-    color: orange;
-}
-
-#logoutbtn {
-    background-color: lightgray;
-}
-
-
-.dashmain {
-    margin-left: 250px; 
-    font-size: 28px;
-    padding: 0px 10px;
-}
-
-
-.first-box {
-    order: 1;
-    display: flex;
-    min-height: 15vh;
-}
-
-.second-box {
-    order: 2;
-    min-height: 15vh;
-}
-
-.third-box {
-    order: 3;
-    min-height: 15vh;
-}
->>>>>>> Develop
