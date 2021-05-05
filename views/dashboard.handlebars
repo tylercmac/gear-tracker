@@ -49,7 +49,7 @@
 
         <div class="second-box">
             <form id="bag">
-            <h3>Pack my Bag</h3>
+            <h3>Add new Gear item to bank</h3>
             <input type="text" name="category" id="category" placeholder="category">
             <br>
             <button id='addCategory'></button>
@@ -69,11 +69,31 @@
             </form>
         </div>
 
-
-
         <div class="third-box">
-            <h3>My Pack</h3>
-            <div id="piechart"></div>
+            <form id="tripForm">
+            <h3>Start a new trip!</h3>
+            <input type="text" name="name" id="name" placeholder="Trip name">
+            <br>
+            <input type="text" name="location" id="location" placeholder="Trip Location">
+            <br>
+            <input type="text" name="tripdescription" id="tripdescription" placeholder="Trip Description">
+            <br>
+            <input type="text" name="startingdate" id="startingdate" placeholder="Starting Date: YYYY/MM/DD">
+            <br>
+            <input type="text" name="weight" id="weight" placeholder="weight">
+            <br>
+            <input type="text" name="price" id="price" placeholder="price">
+            <button>Add to pack</button>
+            </form>
+            <div class="piechart-container">
+                <h3>My Pack</h3>
+                <div id="piechart"></div>
+            </div>
         </div>
+
+
+
+
+
 
 <script src="js/dashscript.js"></script>

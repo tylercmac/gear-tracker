@@ -131,6 +131,7 @@ document.querySelector("#bag").addEventListener("submit", event => {
       } else {
           alert("couldn't add item!")
           location.reload();
+          console.log(res);
       }
   })
 })
