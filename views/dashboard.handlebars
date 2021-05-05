@@ -1,4 +1,6 @@
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/style.css"
     <link rel="stylesheet" href="css/dash.css">
 </head>
 
@@ -15,25 +17,14 @@
     <div class="dashmain">
         <div class="dash-heading">
             <h2 class="title">Welcome to GearWise</h2>
+            <div id="chartSize">
+            <canvas id="myChart" width="100" height="100"></canvas>
+            </div>
         </div>
+    
 
         <div id="userinput">
-            <div class="checklist">
-                <h3>Gear Bank</h3>
-                <br>
-                {{#each userGear as |gear|}}
-                <div class="gearitem" data-id={{gear.id}}>
-                    <button class="deletebtn">delete</button>
-                    <h4>{{gear.general_name}}</h4>
-                    <h4>{{gear.product_name}}</h4>
-                    <h4>{{gear.description}}</h4>
-                    <br>
-                </div>
-            </div>
-            {{/each}}
-        </div>
-
-            <div class="second-box">
+            <div class="gear-form">
                 <form id="bag">
                     <h4>Add new Gear item to bank</h4>
                     <input type="text" name="category" id="category" placeholder="category">
@@ -52,8 +43,23 @@
                     <br>
                     <button>Add to pack</button>
                 </form>
+                <div class="gear-bank">
+                    <h3>Gear Bank</h3>
+                    <br>
+                    {{#each userGear as |gear|}}
+                    <div class="gearitem" data-id={{gear.id}}>
+                        <button class="deletebtn">delete</button>
+                        <h4>{{gear.general_name}}</h4>
+                        <h4>{{gear.product_name}}</h4>
+                        <h4>{{gear.description}}</h4>
+                        <br>
+                    </div>
+                </div>
+                {{/each}}
+
             </div>
 
+        </div>
 
 
 
@@ -88,3 +94,4 @@
 
 
     <script src="js/dashscript.js"></script>
+    <script src="js/chart.js"></script>
