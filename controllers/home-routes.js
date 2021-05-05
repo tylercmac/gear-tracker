@@ -24,6 +24,28 @@ router.get("/dashboard", apiAuth, async (req, res) => {
     }
 })
 
+// Load specific trip data to add loadouts
+router.get("/dashboard/:id", apiAuth, async (req, res) => {
+    // try {
+      const userGearData = await GearItem.findAll( { 
+        where: { 
+          user_id: req.session.user.id
+        }
+      })
+      const currTripData = await Trip.findByPk(req.params.id, {
+        include: [{ model: GearItem }]
+      })
+      console.log(currTripData)
+      const userGear = userGearData.map((gear) => gear.get({ plain: true }))
+      const currTrip = currTripData.get({ plain: true })
+      console.log(currTrip);
+      
+      res.render("dashboard", { userGear, currTrip })
+    // } catch (err) {
+    //   res.json(err);
+    // }
+})
+
 // For trips page, will display the trips that the user has
 router.get("/trips", apiAuth, async (req, res) => {
   try {
