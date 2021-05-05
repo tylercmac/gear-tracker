@@ -73,36 +73,36 @@ const deleteItem = (e) => {
 }
 
 // Add a trip form with fetch req to server
-// document.querySelector("#trip-form").addEventListener("submit", event => {
-//   console.log('trip submitted');
+document.querySelector("#tripForm").addEventListener("submit", event => {
+  console.log('trip submitted');
   
-//   event.preventDefault();
-//   const fetchObj = {
-//       name: document.querySelector("#name").value,
-//       location: document.querySelector("#location").value,
-//       description: document.querySelector("#description").value,
-//       starting_date: document.querySelector("#startdate").value,
-//       ending_date: document.querySelector("#enddate").value,
-//       distance_mi: document.querySelector("#distance").value,
-//   }
-//   console.log(fetchObj);
-//   fetch("/api/trips", {
-//       method: "POST",
-//       body: JSON.stringify(fetchObj),
-//       headers: {
-//           "Content-Type": "application/json"
-//       }
-//   }).then(res => {
-//       console.log(res);
-//       if (res.ok) {
-//           console.log("added successfully!")
-//           location.reload();
-//       } else {
-//           alert("couldn't add trip!")
-//           location.reload();
-//       }
-//   })
-// })
+  event.preventDefault();
+  const fetchObj = {
+      name: document.querySelector("#name").value,
+      location: document.querySelector("#location").value,
+      description: document.querySelector("#tripdescription").value,
+      starting_date: document.querySelector("#startingdate").value,
+      ending_date: document.querySelector("#endingdate").value,
+      distance_mi: document.querySelector("#distance").value
+  }
+  console.log(fetchObj);
+  fetch("/api/trips", {
+      method: "POST",
+      body: JSON.stringify(fetchObj),
+      headers: {
+          "Content-Type": "application/json"
+      }
+  }).then(res => {
+      console.log(res);
+      if (res.ok) {
+          console.log("added successfully!")
+          location.reload();
+      } else {
+          alert("couldn't add trip!")
+          location.reload();
+      }
+  })
+})
 
 // Add a gear item to gear bank through this form
 document.querySelector("#bag").addEventListener("submit", event => {
