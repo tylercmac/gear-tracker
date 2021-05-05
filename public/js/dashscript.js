@@ -122,17 +122,9 @@ document.querySelector("#tripForm").addEventListener("submit", event => {
       }
   }).then(res => 
       res.json()
-      // if (res.ok) {
-      //     console.log("added successfully!")
-      //     location.replace();
-      // } else {
-      //     alert("couldn't add trip!")
-      //     location.reload();
-      // }
   )
   .then(data => { 
-    // location.href = `/${data.id}`;
-    location.replace(`/${data.id}`);
+    location.replace(`/dashboard/${data.id}`);
     
   })
 })
