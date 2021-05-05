@@ -18,33 +18,37 @@ const logoutUser = () => {
 // When item is chosen from gear bank, it will populate spot on current trip gear list
 const addToTrip = (e) => {
   const currentItemId = e.target.parentElement.dataset.id;
-  const generalName = document.getElementById('generalName').textContent;
-  const productName = document.getElementById('productName').textContent;
-  const description = document.getElementById('description').textContent;
-  const tripGearList = document.querySelector('.tripGearList');
+  
+  let urlArr = window.location.href.split('')
+  let currTripId = urlArr[urlArr.length - 1]
 
-  // Will create a fetch request here to post/associate this item to current trip that is being planned
 
-  // Create a list element to display item
-  const newItem = document.createElement('li');
-  // populate list item with info
-  newItem.textContent = `${generalName}, ${productName}, ${description}` 
-  // Create 'remove' button
-  const removeBtn = document.createElement('button');
-  removeBtn.textContent = 'Remove';
-  // Gives it a remove function
-  removeBtn.addEventListener('click', (e) => {
-    const listItem = e.target.parentElement;
-    tripGearList.removeChild(listItem);
+  console.log(currTripId)
+  if (currTripId = "d") {
+    alert('no trip to assign this item to!')
+    return;
+  } 
+  //  Upates gear item to that trip on page
+  fetch(`/api/gear/${currentItemId}`, {
+    method: 'PUT',
+    body: JSON.stringify({
+      trip_id: currTripId
+    }),
+    headers: {
+      "Content-Type": "application/json"
+  }
+  }).then(res => {
+    if(res.ok) {
+      alert("Item added to trip!")
+      location.reload();
+    } else {
+      alert("unable to process request")
+      console.log(res);
+      
+    }
   })
-  // Give it an attribute with the item ID for later access
-  newItem.setAttribute('data-id', currentItemId)
-  // Add the remove button to list item
-  newItem.append(removeBtn)
-  // Add the element to the trip gear list
-  tripGearList.append(newItem);
-
 }
+
 
 
 // this will find the parent gear element and fetch request to remove it from API
@@ -92,15 +96,12 @@ document.querySelector("#tripForm").addEventListener("submit", event => {
       headers: {
           "Content-Type": "application/json"
       }
-  }).then(res => {
-      console.log(res);
-      if (res.ok) {
-          console.log("added successfully!")
-          location.reload();
-      } else {
-          alert("couldn't add trip!")
-          location.reload();
-      }
+  }).then(res => 
+      res.json()
+  )
+  .then(data => { 
+    location.replace(`/dashboard/${data.id}`);
+    
   })
 })
 
