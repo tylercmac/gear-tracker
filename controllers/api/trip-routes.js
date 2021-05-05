@@ -40,7 +40,7 @@ router.post('/', async (req, res) => {
       starting_date: req.body.starting_date,
       ending_date: req.body.ending_date,
       distance_mi: req.body.distance_mi,
-      user_id: req.session.user.id
+      user_id: req.body.user_id,
     });
     res.status(200).json(newTrip);
   } catch (err) {
