@@ -110,4 +110,13 @@ aside{
     margin-left: 250px;
 }
 
+.dash-heading{
+    display: flex;
+    justify-content: space-between;
+}
 
+#chartSize{
+    
+    height: 200px;
+    width: 200px;
+}
