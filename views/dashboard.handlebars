@@ -1,6 +1,4 @@
-<head>
-    <link rel="stylesheet" href="css/dash.css">
-</head>
+<link rel="stylesheet" href="css/dash.css">
 
 <div id="main-container">
 
@@ -70,8 +68,19 @@
             <br>
             <button>Save Trip</button>
             </form>
+                <h1>{{currTrip.name}}</h1>
+                <p>{{currTrip.location}}, {{currTrip.distance_mi}}</p>
+                <p><strong>{{currTrip.starting_date}}-{{currTrip.ending_date}}</strong></p>
                 <h3>Trip Loadout</h3>
-                <ol class="tripGearList"></ol>
+                {{#each currTrip.GearItems as |gear|}}
+                            <div class="gearitem" data-id={{gear.id}}>
+                <button class="deletebtn">delete</button>
+                <button class="addToTrip">Add to trip</button>
+                <h4 id="generalName">{{gear.general_name}}</h4>
+                <p id="productName">{{gear.product_name}}</p>
+                <p id="description">{{gear.description}}</p>
+                <br>
+                {{/each}}
         </div>
 
         <div class="piechart-container">
