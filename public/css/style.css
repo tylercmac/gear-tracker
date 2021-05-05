@@ -4,6 +4,26 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 
+#mainTrips{
+    display: flex;
+    flex-direction: column;
+}
+
+#tripsPage{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+aside{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
 
 
 .switchColor{
@@ -28,7 +48,7 @@
 
 .main{
     height: 100vh;
-    opacity: 0.5px;
+    
 }
 
 .center{
@@ -38,7 +58,7 @@
 }
 
 .image{
-    background-image: url("/images/signUpPhoto.JPG");
+    background-image: url("/images/Mountian_cover_opacity_lower.JPG");
     background-size: cover;
     height: inherit;
 }
@@ -69,52 +89,24 @@
     margin-right: 8px;
 }
 
-#main-container {
-    display:flex;  
-    height: 100vh
+.white{
+    color: white;
 }
 
-#side-nav {
-    flex:1;
-    max-width: 250px;
+.tripsBtn{
     background-color: #b8a6a0;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+
 }
 
-.side-bar a {
-    padding: 6px 6px 6px 32px;
-    font-size: 30px;
-    color: #c57a3c;
-    display: block;
+.tripsH2{
+    color: #647c7c;
 }
 
-.side-bar a:hover {
-    color: orange;
+.myTrips{
+    flex: 2;
+    margin-left: 250px;
 }
 
-#logoutbtn {
-    background-color: lightgray;
-}
-
-
-.dashmain {
-    margin-left: 250px; 
-    font-size: 28px;
-    padding: 0px 10px;
-}
-
-
-.first-box {
-    order: 1;
-    display: flex;
-    min-height: 15vh;
-}
-
-.second-box {
-    order: 2;
-    min-height: 15vh;
-}
-
-.third-box {
-    order: 3;
-    min-height: 15vh;
-}
