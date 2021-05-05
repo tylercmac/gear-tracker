@@ -1,7 +1,7 @@
 <head>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dash.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/dash.css">
 </head>
 
 <div id="main-container">
@@ -24,25 +24,27 @@
     
 
         <div id="userinput">
+
             <div class="gear-form">
+            
                 <form id="bag">
-                    <h4>Add new Gear item to bank</h4>
-                    <input type="text" name="category" id="category" placeholder="category">
-                    <br>
-                    <button id='addCategory'></button>
-                    <br>
-                    <input type="text" name="item" id="item" placeholder="item">
-                    <br>
-                    <input type="text" name="prodname" id="prodname" placeholder="product name">
-                    <br>
-                    <input type="text" name="description" id="description" placeholder="description">
-                    <br>
-                    <input type="text" name="weight" id="weight" placeholder="weight">
-                    <br>
-                    <input type="text" name="price" id="price" placeholder="price">
-                    <br>
-                    <button>Add to pack</button>
-                </form>
+                  <h4>Add new Gear item to bank</h4>
+                  <input type="text" name="category" id="category" placeholder="category">
+                  <br>
+                  <button id='addCategory'></button>
+                  <br>
+                  <input type="text" name="item" id="item" placeholder="item">
+                  <br>
+                  <input type="text" name="prodname" id="prodname" placeholder="product name">
+                  <br>
+                  <input type="text" name="description" id="description" placeholder="description">
+                  <br>
+                  <input type="text" name="weight" id="weight" placeholder="weight">
+                  <br>
+                  <input type="text" name="price" id="price" placeholder="price">
+                  <br>
+                  <button>Add to pack</button>
+                 </form>
                 
                 <div class="gear-bank">
                     <h3>Gear Bank</h3>
@@ -50,17 +52,16 @@
                     {{#each userGear as |gear|}}
                     <div class="gearitem" data-id={{gear.id}}>
                         <button class="deletebtn">delete</button>
+                        <button class="addToTrip">Add to trip</button>
                         <h4>{{gear.general_name}}</h4>
                         <h4>{{gear.product_name}}</h4>
                         <h4>{{gear.description}}</h4>
                         <br>
                     </div>
+                    {{/each}}
                 </div>
-                {{/each}}
 
             </div>
-
-        </div>
 
 
         <div class="third-box">
@@ -74,12 +75,27 @@
                 <br>
                 <input type="text" name="startingdate" id="startingdate" placeholder="Starting Date: YYYY/MM/DD">
                 <br>
+                <input type="text" name="endingdate" id="endingdate" placeholder="Ending Date: YYYY/MM/DD">
+                <br>
                 <input type="text" name="distance" id="distance" placeholder="Distance (miles)">
                 <br>
                 <button>Save Trip</button>
-            </form>
-            <h3>Trip Loadout</h3>
-            <ol class="currentTripGear"></ol>
+             </form>
+                    <h1>{{currTrip.name}}</h1>
+                    <p>{{currTrip.location}}, {{currTrip.distance_mi}}</p>
+                    <p><strong>{{currTrip.starting_date}}-{{currTrip.ending_date}}</strong></p>
+                    <h3>Trip Loadout</h3>
+                    {{#each currTrip.GearItems as |gear|}}
+                        <div class="gearitem" data-id={{gear.id}}>
+                            <button class="deletebtn">Delete</button>
+                            <h4 id="generalName">{{gear.general_name}}</h4>
+                            <p id="productName">{{gear.product_name}}</p>
+                            <p id="description">{{gear.description}}</p>
+                            <p id="weight">{{gear.weight_oz}} oz</p>
+                            <br>
+                        </div>
+                    {{/each}}
+            </div>
         </div>
 
         <div class="piechart-container">
@@ -92,5 +108,5 @@
 
 
 
-    <script src="js/dashscript.js"></script>
-    <script src="js/chart.js"></script>
+    <script src="/js/dashscript.js"></script>
+    <script src="/js/chart.js"></script>
