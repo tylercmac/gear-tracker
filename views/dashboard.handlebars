@@ -24,7 +24,29 @@
     
 
         <div id="userinput">
-                <div class="checklist">
+
+            <div class="gear-form">
+            
+                <form id="bag">
+                  <h4>Add new Gear item to bank</h4>
+                  <input type="text" name="category" id="category" placeholder="category">
+                  <br>
+                  <button id='addCategory'></button>
+                  <br>
+                  <input type="text" name="item" id="item" placeholder="item">
+                  <br>
+                  <input type="text" name="prodname" id="prodname" placeholder="product name">
+                  <br>
+                  <input type="text" name="description" id="description" placeholder="description">
+                  <br>
+                  <input type="text" name="weight" id="weight" placeholder="weight">
+                  <br>
+                  <input type="text" name="price" id="price" placeholder="price">
+                  <br>
+                  <button>Add to pack</button>
+                 </form>
+                
+                <div class="gear-bank">
                     <h3>Gear Bank</h3>
                     <br>
                     {{#each userGear as |gear|}}
@@ -38,29 +60,12 @@
                     </div>
                     {{/each}}
                 </div>
-            <div class="second-box">
-                <form id="bag">
-                <h4>Add new Gear item to bank</h4>
-                <input type="text" name="category" id="category" placeholder="category">
-                <br>
-                <button id='addCategory'></button>
-                <br>
-                <input type="text" name="item" id="item" placeholder="item">
-                <br>
-                <input type="text" name="prodname" id="prodname" placeholder="product name">
-                <br>
-                <input type="text" name="description" id="description" placeholder="description">
-                <br>
-                <input type="text" name="weight" id="weight" placeholder="weight">
-                <br>
-                <input type="text" name="price" id="price" placeholder="price">
-                <br>
-                <button>Add to pack</button>
-                </form>
+
             </div>
 
-            <div class="third-box">
-                <form id="tripForm">
+
+        <div class="third-box">
+            <form id="tripForm">
                 <h3>Start a new trip!</h3>
                 <input type="text" name="name" id="name" placeholder="Trip name">
                 <br>
@@ -75,7 +80,7 @@
                 <input type="text" name="distance" id="distance" placeholder="Distance (miles)">
                 <br>
                 <button>Save Trip</button>
-                </form>
+             </form>
                     <h1>{{currTrip.name}}</h1>
                     <p>{{currTrip.location}}, {{currTrip.distance_mi}}</p>
                     <p><strong>{{currTrip.starting_date}}-{{currTrip.ending_date}}</strong></p>
