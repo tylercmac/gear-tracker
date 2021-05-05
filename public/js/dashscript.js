@@ -44,7 +44,37 @@ const addToTrip = (e) => {
   // Add the element to the trip gear list
   tripGearList.append(newItem);
 
+  let currentTrip;
+
+  fetch(`/api/trips`, {
+    method: 'GET',
+  }).then((res) => {
+    console.log(res)
+    currentTrip = res[res.length].id
+  })
+
+  console.log(currentTrip)
+
+  fetch(`/api/gear/${currentItemId}`, {
+    method: 'PUT',
+    body: JSON.stringify({
+      trip_id: currentTrip
+    }),
+    headers: {
+      "Content-Type": "application/json"
+  }
+  }).then(res => {
+    if(res.ok) {
+      alert("Item added to trip!")
+      location.reload();
+    } else {
+      alert("unable to process request")
+      console.log(res);
+      
+    }
+  })
 }
+
 
 
 // this will find the parent gear element and fetch request to remove it from API
