@@ -6,7 +6,8 @@
 
 #main-container {
     display:flex;  
-    height: 100vh
+    flex-direction: row;
+    height: 100vh;
 }
 
 #side-nav {
@@ -30,26 +31,12 @@
     background-color: lightgray;
 }
 
+#body {
+    flex:3;
+}
 
 .dashmain {
-    margin-left: 250px; 
     font-size: 28px;
-    padding: 0px 10px;
 }
 
 
-.first-box {
-    order: 1;
-    display: flex;
-    min-height: 15vh;
-}
-
-.second-box {
-    order: 2;
-    min-height: 15vh;
-}
-
-.third-box {
-    order: 3;
-    min-height: 15vh;
-}

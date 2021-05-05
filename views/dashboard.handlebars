@@ -1,79 +1,70 @@
+<head>
+    <link rel="stylesheet" href="css/dash.css">
+</head>
 
 <div id="main-container">
 
     <div id="side-nav">
         <ul class="side-bar">
-            <li><a href="#">Trips</a></li>
+            <li><a href="/trips">Trips</a></li>
             <button id='logoutbtn'>Logout</button>
         </ul>
-=======
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-            <ul class="nav nav-sidebar">
-                <li><a href="/trips">Trips</a></li>
-                <li><a href="#">Browse Trails</a></li>
-                <button id='logoutbtn'>Logout</button>
-            </ul>
-        </div>
-
     </div>
 
-    <div id="body">
-        <div class="dashmain">
-            <div class="dash-heading">
-                <h2 class="title">Welcome to GearWise</h2>
-            </div>
+
+    <div class="dashmain">
+        <div class="dash-heading">
+            <h2 class="title">Welcome to GearWise</h2>
         </div>
 
-
-        <div class="first-box">
-            <div class="checklist">
-                <h3>Gear Bank</h3>
+        
+        <div class="checklist">
+            <h3>Gear Bank</h3>
+            <br>
+            {{#each userGear as |gear|}}
+            <div class="gearitem" data-id={{gear.id}}>
+                <button class="deletebtn">delete</button>
+                <h4>{{gear.general_name}}</h4>
+                <h4>{{gear.product_name}}</h4>
+                <h4>{{gear.description}}</h4>
                 <br>
-                {{#each userGear as |gear|}}
-                <div class="gearitem" data-id={{gear.id}}>
-                    <button class="deletebtn">delete</button>
-                    <h4>{{gear.general_name}}</h4>
-                    <h4>{{gear.product_name}}</h4>
-                    <h4>{{gear.description}}</h4>
-                    <br>
-                </div>
             </div>
-            {{/each}}
-            <input type="checkbox" id="gear" placeholder="My Gear">
-            <span onclick="newElement()" class="addBtn">Add</span>
         </div>
+        {{/each}}
+        <input type="checkbox" id="gear" placeholder="My Gear">
+        <span onclick="newElement()" class="addBtn">Add</span>
+    </div>
 
 
 
-        <div class="second-box">
-            <form id="bag">
-            <h3>Pack my Bag</h3>
-            <input type="text" name="category" id="category" placeholder="category">
-            <br>
-            <button id='addCategory'></button>
-            <br>
-            <input type="text" name="item" id="item" placeholder="item">
-            <br>
-            <input type="text" name="prodname" id="prodname" placeholder="product name">
-            <br>
-            <button id='addItem'></button>
-            <br>
-            <input type="text" name="description" id="description" placeholder="description">
-            <br>
-            <input type="text" name="weight" id="weight" placeholder="weight">
-            <br>
-            <input type="text" name="price" id="price" placeholder="price">
-            <button>Add to pack</button>
-            </form>
-        </div>
+<div class="second-box">
+    <form id="bag">
+        <h3>Pack my Bag</h3>
+        <input type="text" name="category" id="category" placeholder="category">
+        <br>
+        <button id='addCategory'></button>
+        <br>
+        <input type="text" name="item" id="item" placeholder="item">
+        <br>
+        <input type="text" name="prodname" id="prodname" placeholder="product name">
+        <br>
+        <button id='addItem'></button>
+        <br>
+        <input type="text" name="description" id="description" placeholder="description">
+        <br>
+        <input type="text" name="weight" id="weight" placeholder="weight">
+        <br>
+        <input type="text" name="price" id="price" placeholder="price">
+        <button>Add to pack</button>
+    </form>
+</div>
 
 
+<div class="third-box">
+    <h3>My Pack</h3>
+    <div id="piechart"></div>
+</div>
 
-        <div class="third-box">
-            <h3>My Pack</h3>
-            <div id="piechart"></div>
-        </div>
+</div>
 
 <script src="js/dashscript.js"></script>
