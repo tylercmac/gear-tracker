@@ -1,4 +1,4 @@
-document.querySelector('.tripcard').addEventListener('click', (e) => {
+document.querySelector('.userTrips').addEventListener('click', (e) => {
   console.log('clicked!');
   const trip = e.target;
   const tripId = trip.parentElement.dataset.id
