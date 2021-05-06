@@ -64,11 +64,13 @@ const addToTrip = (e) => {
   };
   
   fetch(`/api/gear/${currentItemId}`, requestOptions)
-    .then(response => response.text())
-    .then(result => {
-      location.reload();
-    })
-    .catch(error => console.log('error', error));
+  .then( res => {
+    if (res.ok) {
+    location.reload()
+    }
+})
+.catch(error => console.log('error', error));
+  location.reload();
 
 }
 
@@ -76,10 +78,8 @@ const addToTrip = (e) => {
 
 // this will find the parent gear element and fetch request to remove it from API
 const deleteItem = (e) => {
-  e.stopPropagation();
-  const gear = e.target;
-  
-  const gearId = gear.dataset.id;
+
+  const gearId = e.target.parentElement.dataset.id;
 
   fetch(`/api/gear/${gearId}`, {
     method: 'DELETE',
@@ -93,9 +93,44 @@ const deleteItem = (e) => {
     } else {
       alert("unable to process request")
       console.log(res);
-      
     }
   })
+}
+
+const removeItem = (e) => {
+  e.stopPropagation();
+
+  let currTripId = document.querySelector('.currentTripBox').dataset.id
+  
+  const gearId = e.target.dataset.id;
+
+  console.log(gearId);
+
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  
+  var raw = JSON.stringify({
+    "id": gearId
+  });
+  
+  var requestOptions = {
+    method: 'PUT',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+  
+  fetch(`/api/trips/${currTripId}`, requestOptions)
+    // .then(response => response.json.text())
+    .then( res => {
+      console.log(res);
+        if (res.ok) {
+        location.reload()
+        }
+    })
+    .catch(error => console.log('error', error));
+      location.reload();
+  
 }
 
 // Add a trip form with fetch req to server
@@ -156,28 +191,31 @@ document.querySelector("#bag").addEventListener("submit", event => {
   })
 })
 
-// Save trip with gear items in it?
-// document.querySelector("#saveTrip").addEventListener('click', event => {
-//   event.preventDefault();
-  
-  
-  
-// })
 
 document.querySelector("#logoutbtn").addEventListener("click", logoutUser) 
 
-//if (document.querySelector(".deletebtn")) {
-  document.querySelector(".gear-bank").addEventListener("click", (event) => {
-    if (event.target.className.indexOf("deletebtn") > -1) {
-      deleteItem();
-    }
-    if (event.target.className.indexOf("addToTrip") > -1) {
-      addToTrip(event);
-    }
-  });
-//   document.querySelector(".deletebtn").addEventListener("click", deleteItem);
-// //} 
 
-// if (document.querySelector(".addToTrip")) {
-//   document.querySelector(".addToTrip").addEventListener("click", addToTrip);
-// }
+document.querySelector(".gear-bank").addEventListener("click", (event) => {
+  if (event.target.className.indexOf("deletebtn") > -1) {
+    deleteItem(event);
+  }
+  if (event.target.className.indexOf("addToTrip") > -1) {
+    addToTrip(event);
+  }
+});
+
+
+const removeBtn = document.querySelectorAll(".removebtn");
+
+if (removeBtn) {
+  for (const btn of removeBtn) {
+    btn.addEventListener("click", (event) => {
+      console.log('clicked'); 
+      removeItem(event);
+
+    });
+    
+  }
+
+}
+
