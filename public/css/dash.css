@@ -37,11 +37,22 @@
     width: 100vw;
 }
 
+
+.button {
+    align-self: flex-start;
+}
+
+.dashmain {
+    font-size: 28px;
+    width: 100%;
+}
+
 .img {
     background-image: url(../);
     background-image: ("/images/forest.png");
     background-size: cover;
     height: inherit;
+
 }
 
 .third-box {
@@ -53,8 +64,61 @@
 }
 .gear-bank {
     border: 5px solid darkgray;
+    display: flex;
+    flex-direction: column;
+    padding: .5rem
 }
 
-/* .hide {
+.hide {
     display: none;
-} */
+}
+
+.dashboardheader {
+
+}
+
+#bankheader {
+    text-align: center;
+    text-decoration: underline;
+    color: #51646b;
+}
+
+.gearitem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: .5rem;
+    border: 1px solid grey;
+    margin: .5rem 0;
+    background-color: gainsboro;
+    border-radius: 1rem;
+    box-shadow: 2px 3px 5px;
+}
+
+p#genname {
+    text-decoration: underline;
+    font-size: 1.5rem
+}
+
+p#prodname {
+    font-size: 1rem;
+    font-style: italic;
+    align-self: center;
+}
+
+p#bankdescrip {
+    font-size: .8rem;
+}
+
+p#bankweight {
+    font-size: 1rem;
+    color: rebeccapurple;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+
