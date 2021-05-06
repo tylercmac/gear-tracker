@@ -48,6 +48,7 @@ router.post('/', async (req, res) => {
 })
 
 router.delete('/:id', async (req, res) => {
+  console.log(req.body)
   try {
     const removedItem = await GearItem.destroy({
       where: {
@@ -65,23 +66,43 @@ router.delete('/:id', async (req, res) => {
   }
 })
 
-
+//  How to add the trip to this specific gear item?
 router.put('/:id', async (req, res) => {
-  try {
-    const removedItem = await GearItem.update({
-      where: {
-        id: req.params.id
-      }
-    })
-    res.status(200).json(removedItem)
+  console.log('route reached!');
+  
+  console.log('reqbody:', req.body)
+  let tripID = (req.body.id);
+  console.log(tripID);
+  
+  // attempt 1
+  const tripToUpdate = await Trip.findByPk(tripID)
 
-    if (!removedItem) {
-      res.status(404).json({message: 'item not found'})
-      
-    }
-  } catch (err) {
-    res.status(500).json(err);
-  }
+  tripToUpdate.addGearItem(req.params.id)
+  tripToUpdate.save();
+
+  res.json({ 
+    include: tripToUpdate
+  })
+  // // Attempt 2
+  //   try {
+  //     const updatedItem = await GearItem.update({ Trips: [req.body]}, {
+  //       where: {
+  //         id: req.params.id
+  //       },
+  //       include: [{ model: Trip }]
+  //     })
+  //     res.status(200).json(updatedItem)
+  
+  //     if (!updatedItem) {
+  //       res.status(404).json({message: 'item not found'})
+        
+  //     }
+  //   } catch (err) {
+  //     res.status(500).json(err);
+  //   }
+  // })
 })
+
+
 
 module.exports = router;
