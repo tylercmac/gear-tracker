@@ -1,19 +1,11 @@
-
-
-
-
-
-
-
-
-fetch(`api/trips/5`, {
+fetch(`http://localhost:3001/api/trips/5`, {
     method: 'GET',
-}).then(function (response) {
-    return response.json();
 })
+    .then(function (response) {
+        return response.json();
+    })
     .then(function (data) {
         console.log(data.GearItems)
-
         const labels = data.GearItems.map(item => item.general_name)
         console.log("mine string", labels)
 
@@ -50,6 +42,7 @@ fetch(`api/trips/5`, {
                 scales: {
                     y: {
                         beginAtZero: true
+
                     }
                 }
             }
