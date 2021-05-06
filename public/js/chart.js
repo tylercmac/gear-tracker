@@ -1,13 +1,6 @@
-
-
-
-
-
-
-
 fetch(`http://localhost:3001/api/trips/5`, {
     method: 'GET',
-  }).then(function (response) {
+}).then(function (response) {
     return response.json();
   })
   .then(function (data){
@@ -48,15 +41,15 @@ fetch(`http://localhost:3001/api/trips/5`, {
             scales: {
                 y: {
                     beginAtZero: true
+
                 }
             }
-        }
-      }) 
-      
-    
-      
-    }) 
- 
+        })
+
+
+
+    })
+
 
 
 
