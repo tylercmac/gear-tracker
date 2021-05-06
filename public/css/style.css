@@ -15,11 +15,11 @@
 }
 
 
-aside{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 
 }
 
@@ -65,8 +65,9 @@ aside{
     padding-bottom: 20px;
     padding-left: 20px;
     padding-top: 15px;
-    background: #51646b;
+    background: #58752B;
     color: #c57a3c;
+    
 }
 
 #signupForm{
