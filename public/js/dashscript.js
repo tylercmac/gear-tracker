@@ -10,6 +10,8 @@ const checkURL = () => {
   } else {
     document.querySelector('.currentTripBox').classList.add('hide');
     document.querySelector('.tripLoadout').classList.add('hide');
+    document.querySelector('#chartSize').classList.add('hide');
+    document.querySelector('#myChart').classList.add('hide');
   }
 }
 
