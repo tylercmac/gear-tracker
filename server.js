@@ -7,6 +7,7 @@ const exphbs = require('express-handlebars');
 require("dotenv").config();
 
 const sequelize = require('./config/connection');
+const { truncate } = require('./models/User');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
