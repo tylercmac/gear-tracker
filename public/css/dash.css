@@ -190,6 +190,6 @@ input[list=categories], input[type=text], input[type=datetime-local], input[type
 @media screen and (max-width: 768px) {
     main,
     nav {
-    flex-direction: column;
+    flex-direction: row;
     }
 }
