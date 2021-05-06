@@ -48,4 +48,20 @@ router.post('/', async (req, res) => {
   }
 })
 
+
+router.put('/:id', async (req, res) => {
+  let gearID = (req.body.id);
+  console.log(gearID);
+
+  try {
+  const tripToUpdate = await Trip.findByPk(req.params.id)
+
+  tripToUpdate.removeGearItem(gearID);
+  tripToUpdate.save();
+  res.status(200).json( {message: 'succes'})
+  } catch (err) {
+    console.log(err);
+  }
+  
+})
 module.exports = router;

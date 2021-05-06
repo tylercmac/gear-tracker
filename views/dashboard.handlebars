@@ -82,8 +82,8 @@
                 </div>
                 <h3>Trip Loadout</h3>
                 {{#each currTrip.GearItems as |gear|}}
-                <div class="gearitem" data-id={{gear.id}}>
-                    <button class="deletebtn">Delete</button>
+                <div class="tripitem" data-id={{gear.id}}>
+                    <button class="removebtn" data-id={{gear.id}}>Remove</button>
                     <h4 id="generalName">{{gear.general_name}}</h4>
                     <p id="productName">{{gear.product_name}}</p>
                     <p id="description">{{gear.description}}</p>
