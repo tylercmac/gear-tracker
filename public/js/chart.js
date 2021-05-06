@@ -1,4 +1,32 @@
+
+
+
+
 var ctx = document.getElementById('myChart').getContext('2d');
+
+fetch(`api/trips/5`, {
+    method: 'GET',
+  }).then(function (response) {
+    return response.json();
+  })
+  .then(function (data){
+
+    console.log(data.GearItems)
+    data.GearItems.forEach(element => {
+        console.log(element.general_name)
+        labels = element.general_name
+        return labels
+    });
+    data.GearItems.forEach(element =>{
+        console.log(element.weight_oz)
+        values = element.weight_oz
+        return values
+    })
+    
+      
+  }) 
+
+
 var myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
@@ -33,3 +61,10 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+
+
+
+// for (i=0; i< data.GearItems; i++){
+    //     product = data.GearItems[i].general_name
+    //     return product
+    //   }
