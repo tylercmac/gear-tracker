@@ -2,11 +2,14 @@ const checkURL = () => {
   let dashURL = window.location.href
   let isDashboard = false;
   //  Check to see if on main dashboard
-  if (dashURL === 'http://localhost:3001/dashboard/') {
+  if (dashURL === 'http://localhost:3001/dashboard/' || dashURL === 'http://localhost:3001/dashboard') {
     isDashboard = true;
   }
   if (!isDashboard) {
     document.querySelector('#tripform').classList.add('hide');
+  } else {
+    document.querySelector('.currentTripBox').classList.add('hide');
+    document.querySelector('.tripLoadout').classList.add('hide');
   }
 }
 
@@ -80,21 +83,24 @@ const addToTrip = (e) => {
 const deleteItem = (e) => {
 
   const gearId = e.target.parentElement.dataset.id;
-
-  fetch(`/api/gear/${gearId}`, {
-    method: 'DELETE',
-    headers: {
-      "Content-Type": "application/json"
-  }
-  }).then(res => {
-    if(res.ok) {
-      alert("Item deleted successfully!")
-      location.reload();
-    } else {
-      alert("unable to process request")
-      console.log(res);
+  confirm('Are you sure you want to delete this? You cannot undo this action.')
+  if (confirm) {
+    fetch(`/api/gear/${gearId}`, {
+      method: 'DELETE',
+      headers: {
+        "Content-Type": "application/json"
     }
-  })
+    }).then(res => {
+      if(res.ok) {
+        location.reload();
+      } else {
+        alert("unable to process request")
+        console.log(res);
+      }
+    })
+  } else {
+    return;
+  }
 }
 
 const removeItem = (e) => {
@@ -181,7 +187,6 @@ document.querySelector("#bag").addEventListener("submit", event => {
       }
   }).then(res => {
       if (res.ok) {
-          console.log("added successfully!")
           location.reload();
       } else {
           alert("couldn't add item!")
