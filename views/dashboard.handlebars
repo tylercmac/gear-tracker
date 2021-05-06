@@ -2,41 +2,43 @@
 
     <div id="nav-bar">
         <ul class="navbar">
-            <a href="/trips">Trips</a>
             <p>Welcome To GearWise</p>
+            <a href="/trips">Trips</a>
             <button id='logoutbtn'>Logout</button>
         </ul>
     </div>
 
 
-    <div class="dashmain">
+<div class="dashmain">
         <div id="userinput">
             <div class="gear-form">
                 <form id="bag">
-                    <h4>Fill your gear closet:</h4>
-                    <input list='categories'>
-                    <datalist name="categories" id="categories" placeholder="Category">
-                        <option value="Shelter">
-                        <option value="Sleep System">
-                        <option value="Clothing">
-                        <option value="Cooking/Hydration">
-                        <option value="Safety/Navigation">
-                        <option value="Hygeine">
-                        <option value="Electronics">
-                        <option value="Miscellaneous">
-                    </datalist>
-                    <br>
-                    <input type="text" name="item" id="item" placeholder="Gear Name" required autofocus>
-                    <br>
-                    <input type="text" name="prodname" id="prodname" placeholder="Brand Product Name">
-                    <br>
-                    <input type="text" name="description" id="description" placeholder="Description">
-                    <br>
-                    <input type="number" name="weight" id="weight" step=".01" placeholder="Weight (oz)">
-                    <br>
-                    <input type="number" name="price" id="price" step=".01" placeholder="Price ($)">
-                    <br>
-                    <button>Add to Closet</button>
+                    <h4 id="closetformheader">Fill your gear closet:</h4>
+                    <div id="closet-inputs">
+                        <input class="closet-input" list='categories' placeholder="Category">
+                        <datalist name="categories" id="categories">
+                            <option value="Shelter">
+                            <option value="Sleep System">
+                            <option value="Clothing">
+                            <option value="Cooking/Hydration">
+                            <option value="Safety/Navigation">
+                            <option value="Hygeine">
+                            <option value="Electronics">
+                            <option value="Miscellaneous">
+                        </datalist>
+                        <br>
+                        <input class="input-field" type="text" name="item" id="item" placeholder="Gear Name" required autofocus>
+                        <br>
+                        <input class="input-field" type="text" name="prodname" id="prodname" placeholder="Brand Product Name">
+                        <br>
+                        <input class="input-field" type="text" name="description" id="description" placeholder="Description">
+                        <br>
+                        <input class="input-field" type="number" name="weight" id="weight" step=".01" placeholder="Weight (oz)">
+                        <br>
+                        <input class="input-field" type="number" name="price" id="price" step=".01" placeholder="Price ($)">
+                        <br>
+                    </div>
+                    <button class="button closet-button">Add to Closet</button>
                 </form>
 
                 <div class="gear-bank">
@@ -60,21 +62,23 @@
 
         <div class="second-box">
             <form id="tripForm">
-                <h3>Start a new trip!</h3>
-                <input type="text" name="name" id="name" placeholder="Trip name">
-                <br>
-                <input type="text" name="location" id="location" placeholder="Trip Location">
-                <br>
-                <input type="text" name="tripdescription" id="tripdescription" placeholder="Trip Description">
-                <br>
-                <input type="datetime-local" name="startingdate" id="startingdate"
-                    placeholder="Starting Date: YYYY/MM/DD">
-                <br>
-                <input type="datetime-local" name="endingdate" id="endingdate" placeholder="Ending Date: YYYY/MM/DD">
-                <br>
-                <input type="number" name="distance" id="distance" placeholder="Distance (miles)">
-                <br>
-                <button>Save Trip</button>
+                <h3 class='new-trip-header'>Start a new trip!</h3>
+                <div id="trip-inputs">
+                    <input class="input-field2" type="text" name="name" id="name" placeholder="Trip name">
+                    <br>
+                    <input class="input-field2" type="text" name="location" id="location" placeholder="Trip Location">
+                    <br>
+                    <input class="input-field2" type="text" name="tripdescription" id="tripdescription" placeholder="Trip Description">
+                    <br>
+                    <input class="input-field2" type="datetime-local" name="startingdate" id="startingdate"
+                        placeholder="Starting Date: YYYY/MM/DD">
+                    <br>
+                    <input class="input-field2" type="datetime-local" name="endingdate" id="endingdate" placeholder="Ending Date: YYYY/MM/DD">
+                    <br>
+                    <input class="input-field2" type="number" name="distance" id="distance" placeholder="Distance (miles)">
+                    <br>
+                <button class='save-trip-btn'>Save Trip</button>
+                </div>
             </form>
             <div class="currentTripBox" data-id={{currTrip.id}}>
                 <h1>{{currTrip.name}}</h1>
@@ -98,7 +102,8 @@
         <div id="chartSize">
             <canvas id="myChart" width="100" height="100"></canvas>
         </div>
-    </div>
+</div>
+
 
     <script src="/js/dashscript.js"></script>
     <script src="/js/chart.js"></script>
