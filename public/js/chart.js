@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 
@@ -5,6 +6,8 @@
 
 
 
+=======
+>>>>>>> 2e5b068b84c220606bd57e3c844b3423212c408f
 fetch(`http://localhost:3001/api/trips/5`, {
     method: 'GET',
 }).then(function (response) {
@@ -48,6 +51,10 @@ fetch(`http://localhost:3001/api/trips/5`, {
             scales: {
                 y: {
                     beginAtZero: true
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2e5b068b84c220606bd57e3c844b3423212c408f
                 }
             }
         })
