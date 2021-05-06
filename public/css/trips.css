@@ -1,0 +1,58 @@
+.sidebar {
+    background-color: #51646B;
+}
+
+.myTrips {
+    display: flex;
+    flex-wrap:wrap;
+    width:50%;
+    grid-template-columns: repeat(3, 2);
+
+    /* justify-content: center; */
+}
+
+#trip-card {
+    width: 225px;
+    height: 300px;
+    margin: 100px;
+    background-color: #9dacb7;
+    border-style: solid;
+    border-radius: 30px;
+}
+
+.card-head {
+    text-align: center;
+    background-color: #647c7c;
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+    border-top-right-radius: 26px;
+    border-top-left-radius: 26px;
+    padding:10px
+}
+
+.card-body {
+    width: 100%;
+    /* height: 164px;
+    border-bottom-left-radius: 27px;
+    border-bottom-right-radius: 27px; */
+}
+
+.trip-location {
+    text-align: center;
+    padding: 7px;
+}
+
+.trip-descrip {
+    height:60px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.trip-distance {
+
+}
+
+.trip-date {
+    
+}
+
