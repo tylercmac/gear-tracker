@@ -53,3 +53,6 @@
     border: 5px solid darkgray;
 }
 
+.hide {
+    display: none;
+}
