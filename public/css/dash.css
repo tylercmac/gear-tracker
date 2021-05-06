@@ -4,55 +4,57 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 
-#main-container {
-    display:flex;  
-    flex-direction: row;
-    height: 100vh;
-    width: 100vw;
+
+#nav-bar {
+    overflow: hidden;
+    background-color: #4A4735;
 }
 
-#userinput {
-    display: flex;
-    justify-content:space-around;
-    width: 100%;
-    height: 100vh;
-}
+.navbar a {
+    text-decoration: none;
 
-#side-nav {
-    flex:1;
-    max-width: 400px;
-    background-color: #b8a6a0;
-}
-
-.side-bar a {
-    padding: 6px 32px 6px 32px;
     font-size: 30px;
     color: #c57a3c;
     display: block;
 }
 
-.side-bar a:hover {
-    color: orange;
+.navbar p {
+    text-align: center;
+    font-size: 30px;
+    color: #c57a3c;
+    display: block;
 }
 
 #logoutbtn {
-    background-color: lightgray;
-}
-
-#body {
-    flex:3;
+    float: right;
+    background-color: orange;
 }
 
 .dashmain {
-    font-size: 28px;
-    width: 100%;
+    display: flex;
+
+    height: 100vh;
+    width: 100vw;
 }
 
+.img {
+    background-image: url(../);
+    background-image: ("/images/forest.png");
+    background-size: cover;
+    height: inherit;
+}
 
+.third-box {
+    display: flex;
+}
+
+.gear-form {
+    
+}
 .gear-bank {
     border: 5px solid darkgray;
 }
 
-.hide {
+/* .hide {
     display: none;
-}
+} */
