@@ -1,36 +1,37 @@
 <div id="mainTrips">
-    <br>
+  <br>
+  <br>
+  <br>
+  {{!-- <h2 class="center tripsH2">Previous Trips</h2> --}}
+  <h2 class="center tripsH2">Your Trips</h2>
+  <br>
+  <br>
+  <br>
+  <br>
+  <main id="tripsPage">
+    <aside class="sidebar">
+      <button class="tripsBtn"><a href="/dashboard" class="white">Dashboard</a></button>
       <br>
-       <br>
-    <h2 class="center tripsH2">Previous Trips</h2>
-    <br>
       <br>
-       <br>
       <br>
-<main id="tripsPage">
-  <aside class="sidebar">
-    <button class="tripsBtn"><a href="/dashboard" class="white">Dashboard</a></button>
-    <br>
       <br>
-       <br>
+      {{!-- <button class="tripsBtn"><a href="#" class="white">Browse Trails</a></button> --}}
       <br>
-    <button class="tripsBtn"><a href="#" class="white">Browse Trails</a></button>
-    <br>
       <br>
-       <br>
       <br>
-    <button id='logoutbtn' class="tripsBtn">Logout</button> 
-  </aside>
+      <br>
+      {{!-- <button id='logoutbtn' class="tripsBtn">Logout</button> --}}
+    </aside>
 
-  
 
-  <div class="myTrips">
-      <h2>Your Trips test script</h2>
-   {{#each userTrips as |trips|}}
-   {{> trips-details}}
-   {{/each}}
-  </div>
-</main>
+
+    <div class="myTrips">
+
+      {{#each userTrips as |trips|}}
+      {{> trips-details}}
+      {{/each}}
+    </div>
+  </main>
 </div>
 
 <script src="js/tripscript.js"></script>

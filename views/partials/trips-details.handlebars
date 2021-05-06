@@ -1,7 +1,11 @@
-<section class="userTrips">
-  <h2>{{name}}</h2>
-  <h4>{{location}}</h4>
-  <p>{{description}}</p>
-  <p>{{distance_mi}} miles</p>
-  <p><strong>{{starting_date}}-{{ending_date}}</strong></p>
+<div class="my-cards">
+<section class="userTrips" id="trip-card">
+  <h2 class="card-head">{{name}}</h2>
+  <div class="card-body">
+    <h4 class="trip-location">{{location}}</h4>
+    <p class="trip-descrip">{{description}}</p>
+    <p class="trip-distance">{{distance_mi}} miles</p>
+    <p class="trip-date"><strong>{{starting_date}}-{{ending_date}}</strong></p>
+  </div>
 </section>
+</div>

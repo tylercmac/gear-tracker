@@ -2,7 +2,7 @@ const checkURL = () => {
   let dashURL = window.location.href
   let isDashboard = false;
   //  Check to see if on main dashboard
-  if (dashURL === 'http://localhost:3001/dashboard/') {
+  if (dashURL === 'http://localhost:3001/dashboard/' || 'http://localhost:3001/dashboard') {
     isDashboard = true;
   }
   if (!isDashboard) {
