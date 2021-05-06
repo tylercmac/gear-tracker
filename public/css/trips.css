@@ -7,8 +7,10 @@
     flex-wrap:wrap;
     width:50%;
     grid-template-columns: repeat(3, 2);
+}
 
-    /* justify-content: center; */
+.my-cards {
+    height: 400px;
 }
 
 #trip-card {
