@@ -53,17 +53,65 @@
 
 .second-box {
     display: flex;
+    width: 50%;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+#bag {
+    text-align: center;
+}
+
+#userinput {
+    margin: 1.5rem;
+    width: 30%;;
+}
+
+#closet-inputs, #trip-inputs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#trip-inputs {
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+.input-field, .input-field2 {
+    margin: .2rem;
+}
+
+.input-field2 {
+    margin: 1rem 1rem;
+}
+
+.closet-button {
+    margin: 0.5rem;
+}
+
+.new-trip-header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.save-trip-btn {
+    margin: 1rem auto;
 }
 
 .gear-bank {
     border: 5px solid darkgray;
     display: flex;
     flex-direction: column;
-    padding: .5rem
+    padding: .5rem;
+    margin: 1.5rem 0;
 }
 
 .hide {
     display: none;
+}
+
+#closetformheader {
+    margin: .5rem;
 }
 
 .dashboardheader {
