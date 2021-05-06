@@ -1,3 +1,17 @@
+const checkURL = () => {
+  let dashURL = window.location.href
+  let isDashboard = false;
+  //  Check to see if on main dashboard
+  if (dashURL === 'http://localhost:3001/dashboard/') {
+    isDashboard = true;
+  }
+  if (!isDashboard) {
+    document.querySelector('#tripform').classList.add('hide');
+  }
+}
+
+checkURL();
+
 const logoutUser = () => {
   console.log('clicked!');
   
@@ -19,34 +33,43 @@ const logoutUser = () => {
 const addToTrip = (e) => {
   const currentItemId = e.target.parentElement.dataset.id;
   
-  let urlArr = window.location.href.split('')
-  let currTripId = urlArr[urlArr.length - 1]
+  let dashURL = window.location.href
+  let isDashboard = false;
+  
+  //  Check to see if on main dashboard
+  if (dashURL === 'http://localhost:3001/dashboard') {
+    isDashboard = true;
+  }
+  // Grabs currently loaded trip ID
+  let currTripId = document.querySelector('.currentTripBox').dataset.id
 
-
-  console.log(currTripId)
-  if (currTripId = "d") {
+  // If on dashboard, alerts that no trip to add item to
+  if (isDashboard === true) {
     alert('no trip to assign this item to!')
     return;
   } 
-  //  Upates gear item to that trip on page
-  fetch(`/api/gear/${currentItemId}`, {
+  //  Upates gear item to that trip on page NOT WORKING
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  
+  var raw = JSON.stringify({
+    "id": currTripId
+  });
+  
+  var requestOptions = {
     method: 'PUT',
-    body: JSON.stringify({
-      trip_id: currTripId
-    }),
-    headers: {
-      "Content-Type": "application/json"
-  }
-  }).then(res => {
-    if(res.ok) {
-      alert("Item added to trip!")
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+  
+  fetch(`/api/gear/${currentItemId}`, requestOptions)
+    .then(response => response.text())
+    .then(result => {
       location.reload();
-    } else {
-      alert("unable to process request")
-      console.log(res);
-      
-    }
-  })
+    })
+    .catch(error => console.log('error', error));
+
 }
 
 
@@ -55,9 +78,8 @@ const addToTrip = (e) => {
 const deleteItem = (e) => {
   e.stopPropagation();
   const gear = e.target;
-  console.log(gear.parentElement.dataset.id);
   
-  const gearId = gear.parentElement.dataset.id;
+  const gearId = gear.dataset.id;
 
   fetch(`/api/gear/${gearId}`, {
     method: 'DELETE',
@@ -101,7 +123,6 @@ document.querySelector("#tripForm").addEventListener("submit", event => {
   )
   .then(data => { 
     location.replace(`/dashboard/${data.id}`);
-    
   })
 })
 
@@ -117,7 +138,6 @@ document.querySelector("#bag").addEventListener("submit", event => {
       weight_oz: document.querySelector("#weight").value,
       price: document.querySelector("#price").value,
   }
-  console.log(fetchObj);
   fetch("/api/gear", {
       method: "POST",
       body: JSON.stringify(fetchObj),
@@ -125,7 +145,6 @@ document.querySelector("#bag").addEventListener("submit", event => {
           "Content-Type": "application/json"
       }
   }).then(res => {
-      console.log(res);
       if (res.ok) {
           console.log("added successfully!")
           location.reload();
@@ -146,9 +165,19 @@ document.querySelector("#bag").addEventListener("submit", event => {
 // })
 
 document.querySelector("#logoutbtn").addEventListener("click", logoutUser) 
-if (document.querySelector(".deletebtn")) {
-  document.querySelector(".deletebtn").addEventListener("click", deleteItem);
-} 
-if (document.querySelector(".addToTrip")) {
-  document.querySelector(".addToTrip").addEventListener("click", addToTrip);
-}
+
+//if (document.querySelector(".deletebtn")) {
+  document.querySelector(".gear-bank").addEventListener("click", (event) => {
+    if (event.target.className.indexOf("deletebtn") > -1) {
+      deleteItem();
+    }
+    if (event.target.className.indexOf("addToTrip") > -1) {
+      addToTrip(event);
+    }
+  });
+//   document.querySelector(".deletebtn").addEventListener("click", deleteItem);
+// //} 
+
+// if (document.querySelector(".addToTrip")) {
+//   document.querySelector(".addToTrip").addEventListener("click", addToTrip);
+// }
