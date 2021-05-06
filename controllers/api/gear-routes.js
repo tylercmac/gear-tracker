@@ -32,6 +32,10 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
+
+  console.log("gear post *******",req.body);
+  console.log("gear session *******",req.session);
+
   try {
     const newGear = await GearItem.create({
       general_name: req.body.general_name,
