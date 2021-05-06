@@ -16,7 +16,6 @@ const seedDatabase = async () => {
   
   const gear = await GearItem.bulkCreate(gearItemSeedData);
 
-  let firstTrip = trips[0]
 
   await trips[0].addGearItem(1)
   await trips[0].addGearItem(3)

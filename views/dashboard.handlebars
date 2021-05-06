@@ -1,9 +1,3 @@
-<head>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/dash.css">
-</head>
-
 <div id="main-container">
 
     <div id="side-nav">
@@ -18,40 +12,40 @@
         <div class="dash-heading">
             <h2 class="title">Welcome to GearWise</h2>
             <div id="chartSize">
-            <canvas id="myChart" width="100" height="100"></canvas>
+                <canvas id="myChart" width="100" height="100"></canvas>
             </div>
         </div>
-    
+
 
         <div id="userinput">
 
             <div class="gear-form">
-            
+
                 <form id="bag">
-                  <h4>Add new Gear item to bank</h4>
-                  <input type="text" name="category" id="category" placeholder="category">
-                  <br>
-                  <button id='addCategory'></button>
-                  <br>
-                  <input type="text" name="item" id="item" placeholder="item">
-                  <br>
-                  <input type="text" name="prodname" id="prodname" placeholder="product name">
-                  <br>
-                  <input type="text" name="description" id="description" placeholder="description">
-                  <br>
-                  <input type="text" name="weight" id="weight" placeholder="weight">
-                  <br>
-                  <input type="text" name="price" id="price" placeholder="price">
-                  <br>
-                  <button>Add to pack</button>
-                 </form>
-                
+                    <h4>Add new Gear item to bank</h4>
+                    <input type="text" name="category" id="category" placeholder="category">
+                    <br>
+                    <button id='addCategory'></button>
+                    <br>
+                    <input type="text" name="item" id="item" placeholder="item">
+                    <br>
+                    <input type="text" name="prodname" id="prodname" placeholder="product name">
+                    <br>
+                    <input type="text" name="description" id="description" placeholder="description">
+                    <br>
+                    <input type="text" name="weight" id="weight" placeholder="weight">
+                    <br>
+                    <input type="text" name="price" id="price" placeholder="price">
+                    <br>
+                    <button>Add to pack</button>
+                </form>
+
                 <div class="gear-bank">
                     <h3>Gear Bank</h3>
                     <br>
                     {{#each userGear as |gear|}}
                     <div class="gearitem" data-id={{gear.id}}>
-                        <button class="deletebtn">delete</button>
+                        <button class="deletebtn">Delete</button>
                         <button class="addToTrip">Add to trip</button>
                         <h4>{{gear.general_name}}</h4>
                         <h4>{{gear.product_name}}</h4>
@@ -64,37 +58,39 @@
             </div>
 
 
-        <div class="third-box">
-            <form id="tripForm">
-                <h3>Start a new trip!</h3>
-                <input type="text" name="name" id="name" placeholder="Trip name">
-                <br>
-                <input type="text" name="location" id="location" placeholder="Trip Location">
-                <br>
-                <input type="text" name="tripdescription" id="tripdescription" placeholder="Trip Description">
-                <br>
-                <input type="text" name="startingdate" id="startingdate" placeholder="Starting Date: YYYY/MM/DD">
-                <br>
-                <input type="text" name="endingdate" id="endingdate" placeholder="Ending Date: YYYY/MM/DD">
-                <br>
-                <input type="text" name="distance" id="distance" placeholder="Distance (miles)">
-                <br>
-                <button>Save Trip</button>
-             </form>
+            <div class="third-box">
+                <form id="tripForm">
+                    <h3>Start a new trip!</h3>
+                    <input type="text" name="name" id="name" placeholder="Trip name">
+                    <br>
+                    <input type="text" name="location" id="location" placeholder="Trip Location">
+                    <br>
+                    <input type="text" name="tripdescription" id="tripdescription" placeholder="Trip Description">
+                    <br>
+                    <input type="text" name="startingdate" id="startingdate" placeholder="Starting Date: YYYY/MM/DD">
+                    <br>
+                    <input type="text" name="endingdate" id="endingdate" placeholder="Ending Date: YYYY/MM/DD">
+                    <br>
+                    <input type="text" name="distance" id="distance" placeholder="Distance (miles)">
+                    <br>
+                    <button>Save Trip</button>
+                </form>
+                <div class="currentTripBox" data-id={{currTrip.id}}>
                     <h1>{{currTrip.name}}</h1>
-                    <p>{{currTrip.location}}, {{currTrip.distance_mi}}</p>
+                    <p>{{currTrip.location}}, {{currTrip.distance_mi}} miles</p>
                     <p><strong>{{currTrip.starting_date}}-{{currTrip.ending_date}}</strong></p>
-                    <h3>Trip Loadout</h3>
-                    {{#each currTrip.GearItems as |gear|}}
-                        <div class="gearitem" data-id={{gear.id}}>
-                            <button class="deletebtn">Delete</button>
-                            <h4 id="generalName">{{gear.general_name}}</h4>
-                            <p id="productName">{{gear.product_name}}</p>
-                            <p id="description">{{gear.description}}</p>
-                            <p id="weight">{{gear.weight_oz}} oz</p>
-                            <br>
-                        </div>
-                    {{/each}}
+                </div>
+                <h3>Trip Loadout</h3>
+                {{#each currTrip.GearItems as |gear|}}
+                <div class="tripitem" data-id={{gear.id}}>
+                    <button class="removebtn" data-id={{gear.id}}>Remove</button>
+                    <h4 id="generalName">{{gear.general_name}}</h4>
+                    <p id="productName">{{gear.product_name}}</p>
+                    <p id="description">{{gear.description}}</p>
+                    <p id="weight">{{gear.weight_oz}} oz</p>
+                    <br>
+                </div>
+                {{/each}}
             </div>
         </div>
 
