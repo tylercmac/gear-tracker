@@ -19,21 +19,21 @@
                 <form id="bag">
                     <h4 id="closetformheader">Fill your gear closet:</h4>
                     <div id="closet-inputs">
-                        <input class="closet-input" list='categories' placeholder="Category">
-                        <datalist name="categories" id="categories">
-                            <option value="Shelter">
-                            <option value="Sleep System">
-                            <option value="Clothing">
-                            <option value="Cooking/Hydration">
-                            <option value="Safety/Navigation">
-                            <option value="Hygeine">
-                            <option value="Electronics">
-                            <option value="Miscellaneous">
-                        </datalist>
+                        <div class="cat-box">
+                            <label id="categories-label" for="categories">Category:</label>
+                            <select name="categories" id="categories">
+                                <option value="Shelter">Shelter</option>
+                                <option value="Sleep System">Sleep System</option>
+                                <option value="Clothing">Clothing</option>
+                                <option value="Cooking/Hydration">Cooking/Hydration</option>
+                                <option value="Safety/Navigation">Safety/Navigation</option>
+                                <option value="Hygeine">Hygeine</option>
+                                <option value="Electronics">Electronics</option>
+                                <option value="Miscellaneous">Miscellaneous</option>
+                            </select>
+                        </div>
                         <br>
                         <input class="input-field" type="text" name="item" id="item" placeholder="Gear Name" required autofocus>
-                        <br>
-                        <input class="input-field" type="text" name="prodname" id="prodname" placeholder="Brand Product Name">
                         <br>
                         <input class="input-field" type="text" name="description" id="description" placeholder="Description">
                         <br>
@@ -85,9 +85,18 @@
                 </div>
             </form>
             <div class="currentTripBox" data-id={{currTrip.id}}>
-                <h1>{{currTrip.name}}</h1>
-                <p>{{currTrip.location}}, {{currTrip.distance_mi}} miles</p>
-                <p><strong>{{currTrip.starting_date}}-{{currTrip.ending_date}}</strong></p>
+                <h1 id="trip-name">{{currTrip.name}}</h1>
+                <p id="trip-location">{{currTrip.location}}</p>
+                <div id="trip-dets">
+                    <div id="left-dets">
+                        <p>Length:   <strong>{{currTrip.distance_mi}} miles</strong></p>
+                        <p>Start Date:  <strong>{{currTrip.starting_date}}</strong></p>
+                        <p>End Date:  <strong>{{currTrip.ending_date}}</strong></p>
+                    </div>
+                    <div id="right-dets">
+                        <p id="trip-descr">{{currTrip.description}}</p>
+                    </div>
+                </div>
             </div>
             <h3 class="tripLoadout">Trip Loadout</h3>
             <div id="trip-loadout-box">

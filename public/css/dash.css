@@ -53,6 +53,30 @@
     width: 100%;
 }
 
+#trip-name {
+    text-align: center;
+}
+
+#trip-location {
+    text-align: center;
+    font-style: italic;
+}
+
+#trip-dets {
+    display: flex;
+    justify-content: space-between;
+}
+
+#left-dets {
+    width: 50%;
+}
+
+#right-dets {
+    width: 40%;
+    border: 1px solid black;
+    margin: .5rem;
+    font-size: 1rem;
+}
 
 .second-box {
     display: flex;
@@ -65,6 +89,7 @@
 .currentTripBox {
     border: 1px black dotted;
     margin: 1rem;
+    width: 100%;
 }
 
 .tripLoadout {
@@ -87,6 +112,7 @@ div#trip-loadout-box {
     justify-content: space-between;
     border-bottom: 1px black dashed;
     padding: .5rem 0;
+    flex-wrap: wrap;
 }
 
 #itemdescription {
@@ -95,12 +121,14 @@ div#trip-loadout-box {
 }
 
 #generalName {
-    border-right: 2px black solid;
-    padding: 0 .5rem;
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+    font-size: smaller;
 }
 
 .trip-item-name-descr {
-    width: 60%;
+    width: 70%;
     line-height: 1.2rem;
 }
 
@@ -119,6 +147,24 @@ button.removebtn {
     text-align: center;
 }
 
+.cat-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 1.5rem;
+}
+
+#categories-label {
+    width: 30%;
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+#categories {
+    width: 70%;
+}
+
 #userinput {
     margin: 1.5rem;
     width: 30%;;
@@ -127,6 +173,7 @@ button.removebtn {
 #closet-inputs, #trip-inputs {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 #trip-inputs {
@@ -215,7 +262,7 @@ p#genname {
 }
 
 p#prodname {
-    font-size: 1rem;
+    font-size: smaller;
     font-style: italic;
     align-self: center;
 }
