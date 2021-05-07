@@ -329,3 +329,9 @@ input[list=categories], input[type=text], input[type=datetime-local], input[type
     flex-direction: row;
     }
 }
+
+@media screen and (max-width: 2000px) {
+    #tripsPage {
+        height: inherit;
+    }
+}
