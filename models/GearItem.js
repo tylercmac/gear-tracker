@@ -17,21 +17,26 @@ GearItem.init(
     },
     product_name: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
     description: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
     weight_oz: {
       type: DataTypes.DECIMAL(5, 2),
-      defaultValue: 0
+      defaultValue: 0,
+      allowNull: true,
     },
     price: {
       type: DataTypes.DECIMAL,
-      defaultValue: 0
+      defaultValue: 0,
+      allowNull: true,
     },
     quantity: {
       type: DataTypes.INTEGER,
-      defaultValue: 1
+      defaultValue: 1,
+      allowNull: true,
     },
     user_id: {
       type: DataTypes.INTEGER,

@@ -70,18 +70,18 @@
             <form id="tripForm">
                 <h3 class='new-trip-header'>Start a new trip!</h3>
                 <div id="trip-inputs">
-                    <input class="input-field2" type="text" name="name" id="name" placeholder="Trip name">
+                    <input class="input-field2" type="text" name="name" id="name" placeholder="Trip name" required>
                     <br>
-                    <input class="input-field2" type="text" name="location" id="location" placeholder="Trip Location">
+                    <input class="input-field2" type="text" name="location" id="location" placeholder="Trip Location" required>
                     <br>
                     <input class="input-field2" type="text" name="tripdescription" id="tripdescription" placeholder="Trip Description">
                     <br>
                     <input class="input-field2" type="datetime-local" name="startingdate" id="startingdate"
-                        placeholder="Starting Date: YYYY/MM/DD">
+                        placeholder="Starting Date: YYYY/MM/DD" required>
                     <br>
-                    <input class="input-field2" type="datetime-local" name="endingdate" id="endingdate" placeholder="Ending Date: YYYY/MM/DD">
+                    <input class="input-field2" type="datetime-local" name="endingdate" id="endingdate" placeholder="Ending Date: YYYY/MM/DD" required>
                     <br>
-                    <input class="input-field2" type="number" name="distance" id="distance" placeholder="Distance (miles)">
+                    <input class="input-field2" type="number" name="distance" id="distance" placeholder="Distance (miles)" required>
                     <br>
                 <button class='save-trip-btn btn'>Save Trip</button>
                 </div>

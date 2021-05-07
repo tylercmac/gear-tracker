@@ -1,7 +1,7 @@
 let currTripId = document.querySelector('.currentTripBox').dataset.id
 
 if (!currTripId){
-    console.log("waiting for gear")
+    // console.log("waiting for gear")
 }else{
   fetch(`http://localhost:3001/api/trips/${currTripId}`, {
     method: 'GET',

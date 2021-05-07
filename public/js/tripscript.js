@@ -31,7 +31,7 @@ const logoutUser = () => {
         method: 'GET',
     }).then(res => {
         if (res.ok) {
-            alert("Logged out successfully!")
+            // alert("Logged out successfully!")
             location.replace("/")
         } else {
             alert("You are not logged in!")
