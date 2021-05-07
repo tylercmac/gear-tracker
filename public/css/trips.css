@@ -1,3 +1,41 @@
+#mainTrips {
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    height: inherit;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+#nav-bar {
+    overflow: hidden;
+    background-color: #4A4735;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-size: 50px;
+    color: #c57a3c;
+}
+
+.navbar a:hover {
+    color: orange;
+}
+
+.navbar p {
+    text-align: center;
+    font-size: 50px;
+    color: #c57a3c;
+    display: block;
+}
+
+#logoutbtn {
+    float: right;
+    background-color: orange;
+    width: 60px;
+    height: 30px;
+}
+
 .myTrips {
     display: flex;
     flex-wrap:wrap;
@@ -19,8 +57,8 @@
 }
 
 #trip-card {
-    width: 225px;
-    height: 300px;
+    width: 250px;
+    height: 325px;
     margin: 100px;
     background-color: #9dacb7;
     border-style: solid;
