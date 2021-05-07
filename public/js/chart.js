@@ -1,4 +1,4 @@
-fetch(`http://localhost:3001/api/trips/5`, {
+fetch(`http://localhost:3001/api/trips/32`, {
     method: 'GET',
 })
     .then(function (response) {

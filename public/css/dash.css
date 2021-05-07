@@ -89,7 +89,7 @@ div#trip-loadout-box {
     padding: .5rem 0;
 }
 
-#description {
+#itemdescription {
     font-size: 1rem;
     font-style: italic;
 }
@@ -104,7 +104,7 @@ div#trip-loadout-box {
     line-height: 1.2rem;
 }
 
-#weight {
+#weightoz {
     border: 1px solid;
     color: darkred;
     padding: 3px;
