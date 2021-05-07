@@ -1,4 +1,4 @@
-fetch(`http://localhost:3001/api/trips/10`, {
+fetch(`http://localhost:3001/api/trips/11`, {
     method: 'GET',
 })
     .then(function (response) {
@@ -7,17 +7,17 @@ fetch(`http://localhost:3001/api/trips/10`, {
     .then(function (data) {
         console.log(data.GearItems)
         const labels = data.GearItems.map(item => item.general_name)
-        console.log("mine string", labels)
+        console.log("gear items", labels)
 
         const values = data.GearItems.map(item => item.weight_oz)
-        console.log("our string", values)
+        console.log("weight of items", values)
         var ctx = document.getElementById('myChart').getContext('2d');
         const myChart = new Chart(ctx, {
             type: 'doughnut',
             data: {
                 labels: labels,
                 datasets: [{
-                    label: '# of Votes',
+                    label: 'gear weight',
                     data: values,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
