@@ -51,14 +51,12 @@
                     <br>
                     {{#each userGear as |gear|}}
                     <div class="gearitem" data-id={{gear.id}}>
-                        <p class='bankitem' id='genname'>{{gear.general_name}}</p>
-                        <p class='bankitem' id="prodname">{{gear.product_name}}</p>
-                        <br>
-                        <button class="btn addToTrip">+ to Trip</button>
-                        <button class="btn deletebtn">X</button>
-                        <div class="break"></div>
-                        <p class='bankitem' id='bankdescrip'>{{gear.description}}</p>
-                        <p class='bankitem' id='bankweight'>[{{gear.weight_oz}} oz]</p>
+                        <div class='bankitem' id='genname'>{{gear.general_name}}</div>
+                        <div class='bankitem' id="prodname">{{gear.product_name}}</div>
+                        <div class='bankitem'><button class="btn addToTrip">+ to Trip</button></div>
+                        <div class='bankitem hide' id='bankdescrip'>{{gear.description}}</div>
+                        <div class='bankitem' id='bankweight'>[{{gear.weight_oz}} oz]</div>
+                        <div class='bankitem'><button class="btn deletebtn">X</button></div>
                     </div>
                     {{/each}}
                 </div>

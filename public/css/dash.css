@@ -227,9 +227,9 @@ button.removebtn {
 
 button.btn.deletebtn {
     padding: 3px;
-    margin-top: .5rem;
     height: 1rem;
     width: 1rem;
+    margin: 2px;
     border-radius: 10rem;
     font-size: x-small;
 }
@@ -282,22 +282,24 @@ button.btn.deletebtn:hover {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
     padding: .5rem;
     border: 1px solid grey;
-    margin: .5rem 0;
     background-color: gainsboro;
-    border-radius: 1rem;
     box-shadow: 2px 3px 5px;
 }
 
+
+.bankitem {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1rem;
+}
+
 p#genname {
-    text-decoration: underline;
-    font-size: 1.5rem
 }
 
 p#prodname {
-    font-size: smaller;
     font-style: italic;
     align-self: center;
 }
@@ -307,7 +309,6 @@ p#bankdescrip {
 }
 
 p#bankweight {
-    font-size: 1rem;
     color: rebeccapurple;
 }
 
