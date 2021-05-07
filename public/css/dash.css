@@ -76,6 +76,11 @@
     border: 1px solid black;
     margin: .5rem;
     font-size: 1rem;
+    padding: .2rem
+}
+
+.navlinks {
+    padding: 1rem;
 }
 
 .second-box {
@@ -104,6 +109,8 @@ div#trip-loadout-box {
     background-color:white;
     padding: .8rem;
     border: 3px grey solid;
+    min-height: 30rem;
+
 }
 
 .tripitem {
@@ -179,6 +186,7 @@ button.removebtn {
 #trip-inputs {
     padding: 1rem;
     border: 1px solid black;
+    background-color: #58752B;
 }
 
 .input-field, .input-field2 {
@@ -187,6 +195,7 @@ button.removebtn {
 
 .input-field2 {
     margin: 1rem 1rem;
+    border-radius: 5px;
 }
 
 .closet-button {
@@ -198,8 +207,22 @@ button.removebtn {
     margin-bottom: 1rem;
 }
 
-.save-trip-btn {
-    margin: 1rem auto;
+.btn {
+    /* margin: 1rem auto; */
+    cursor: pointer;
+    margin-top: 1.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 0.025rem;
+    text-transform: uppercase;
+    color: white;
+    background-color: black;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #252525;
 }
 
 
