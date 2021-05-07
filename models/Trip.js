@@ -21,6 +21,7 @@ Trip.init(
     },
     description: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
     starting_date: {
       type: DataTypes.DATEONLY,

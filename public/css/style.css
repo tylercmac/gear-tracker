@@ -4,6 +4,10 @@
     font-family: 'Bebas Neue', cursive;
 }
 
+.account-text {
+    font-family: arial;
+}
+
 #mainTrips{
     display: flex;
     flex-direction: column;
@@ -37,7 +41,8 @@ aside {
     background-color: #b8a6a0;
     color: white;
     padding: 2px;
-    margin-right: 4px;
+    margin-right: 8px;
+    width:60px;
     border-radius: 4px;
 }
 

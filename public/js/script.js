@@ -15,10 +15,10 @@ document.querySelector("#loginForm").addEventListener("submit", event => {
     }).then(res => {
         console.log(res);
         if (res.ok) {
-            alert("logged in successfully!")
+            // alert("logged in successfully!")
             location.replace("/dashboard")
         } else {
-            alert("log in failed!")
+            alert("Account information not found!")
             location.reload();
         }
     })
