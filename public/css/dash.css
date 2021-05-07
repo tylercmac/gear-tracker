@@ -29,16 +29,23 @@
 
 #logoutbtn {
     float: right;
-    background-color: orange;
-    width: 60px;
-    height: 30px;
+    text-decoration: none;
+    font-size: 50px;
+    color: #c57a3c;
+    margin-top: 0px;
+    margin-right:30px;
+    background-color: #4A4735;
+    border: none;
+}
+
+#logoutbtn:hover{
+    color: orange;
 }
 
 
 .dashmain {
     background-image: url(../images/dashbackground.jpg);
     background-size: cover;
-    height: inherit;
     display: flex;
     height: 100vh;
     width: 100vw;
@@ -208,7 +215,6 @@ button.removebtn {
 }
 
 .btn {
-    /* margin: 1rem auto; */
     cursor: pointer;
     margin-top: 1.5rem;
     padding: 0.5rem 1rem;
