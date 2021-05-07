@@ -20,7 +20,6 @@ aside {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-
 }
 
 
@@ -41,7 +40,6 @@ aside {
     margin-right: 4px;
     border-radius: 4px;
 }
-
 
 
 .main{
@@ -87,7 +85,6 @@ aside {
 #loginEmail{
     margin-right: 8px;
 }
-
 
 
 .white{
