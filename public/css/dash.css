@@ -225,6 +225,18 @@ button.removebtn {
     background-color: #252525;
 }
 
+button.btn.deletebtn {
+    padding: 3px;
+    margin-top: .5rem;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 10rem;
+    font-size: x-small;
+}
+
+button.btn.deletebtn:hover {
+    background-color: red;
+}
 
 
 .gear-bank {
