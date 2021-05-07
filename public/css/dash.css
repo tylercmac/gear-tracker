@@ -225,6 +225,13 @@ button.removebtn {
     background-color: #252525;
 }
 
+.deletebtn {
+    margin-left: .5rem;
+}
+
+button.deletebtn:hover {
+    background-color: red;
+}
 
 
 .gear-bank {
@@ -265,43 +272,48 @@ button.removebtn {
     padding: 10px;
 }
 
+.addToTrip {
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: xx-small;
+    font-weight: 200;
+    padding: .2rem;
+    margin-left: .5rem;
+}
+
 
 .gearitem {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: .5rem;
+    padding: .3rem;
     border: 1px solid grey;
-    margin: .5rem 0;
     background-color: gainsboro;
-    border-radius: 1rem;
     box-shadow: 2px 3px 5px;
 }
 
-p#genname {
-    text-decoration: underline;
-    font-size: 1.5rem
+
+.bankitem {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1rem;
 }
 
-p#prodname {
-    font-size: smaller;
-    font-style: italic;
+
+#prodname {
     align-self: center;
+    margin-left: .5rem;
+    font-size: .9rem;
 }
 
-p#bankdescrip {
+#bankdescrip {
     font-size: .8rem;
 }
 
-p#bankweight {
-    font-size: 1rem;
+#bankweight {
     color: rebeccapurple;
-}
-
-.break {
-    flex-basis: 100%;
-    height: 0;
+    font-size: .8rem;
 }
 
 input[list=categories], input[type=text], input[type=datetime-local], input[type=number] {
