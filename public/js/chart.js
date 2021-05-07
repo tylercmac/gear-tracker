@@ -1,4 +1,4 @@
-fetch(`http://localhost:3001/api/trips/5`, {
+fetch(`http://localhost:3001/api/trips/1`, {
     method: 'GET',
 })
     .then(function (response) {
@@ -57,6 +57,6 @@ fetch(`http://localhost:3001/api/trips/5`, {
 
 
 // for (i=0; i< data.GearItems; i++){
-    //     product = data.GearItems[i].general_name
-    //     return product
-    //   }
+//         product = data.GearItems[i].general_name
+//         return product
+//       }

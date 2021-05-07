@@ -15,6 +15,10 @@ router.get("/dashboard", apiAuth, async (req, res) => {
           user_id: req.session.user.id
         }
       })
+      if (!req.session.user) {
+        res.render('index')
+        return;
+      }
       const userGear = userGearData.map((gear) => gear.get({ plain: true }))
       console.log(userGear.general_name);
       
@@ -55,22 +59,6 @@ router.get("/trips", apiAuth, async (req, res) => {
     const userTrips = userTripData.map((Trip) => Trip.get({ plain: true }))
     
     res.render("trips", { userTrips })
-  } catch (err) {
-    res.json(err);
-  }
-})
-
-router.get("/trips/:id", apiAuth, async (req, res) => {
-  try {
-    const specTripData = await Trip.findByPk( { 
-      where: { 
-        id: req.params.id
-      },
-      include: [ { model: GearItem } ]
-    })
-    const specTrip = specTripData.get({ plain: true })
-    
-    res.render("tripdisplay", { specTrip })
   } catch (err) {
     res.json(err);
   }
