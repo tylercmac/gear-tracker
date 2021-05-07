@@ -90,21 +90,24 @@
                 <p><strong>{{currTrip.starting_date}}-{{currTrip.ending_date}}</strong></p>
             </div>
             <h3 class="tripLoadout">Trip Loadout</h3>
-            {{#each currTrip.GearItems as |gear|}}
-            <div class="tripitem" data-id={{gear.id}}>
-                <button class="removebtn" data-id={{gear.id}}>Remove</button>
-                <h4 id="generalName">{{gear.general_name}}</h4>
-                <p id="productName">{{gear.product_name}}</p>
-                <p id="description">{{gear.description}}</p>
-                <p id="weight">{{gear.weight_oz}} oz</p>
-                <br>
+            <div id="trip-loadout-box">
+                {{#each currTrip.GearItems as |gear|}}
+                <div class="tripitem" data-id={{gear.id}}>
+                    <h4 class="trip-item-detail" id="generalName">{{gear.general_name}}</h4>
+                    <div class="trip-item-name-descr">
+                        <p class="trip-item-detail" id="productName">{{gear.product_name}}</p>
+                        <p class="trip-item-detail" id="description">{{gear.description}}</p>
+                    </div>
+                    <p class="trip-item-detail" id="weight">{{gear.weight_oz}} oz</p>
+                    <button class="removebtn" data-id={{gear.id}}>Remove</button>
+                </div>
+                {{/each}}
             </div>
-            {{/each}}
         </div>
 
 
         <div id="chartSize">
-            <canvas id="myChart" width="100" height="100"></canvas>
+            <canvas id="myChart" width="150" height="150"></canvas>
         </div>
 </div>
 
