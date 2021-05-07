@@ -1,6 +1,11 @@
-fetch(`http://localhost:3001/api/trips/11`, {
+let currTripId = document.querySelector('.currentTripBox').dataset.id
+//let gearItem = document.querySelectorAll('.gearitem').dataset.id
+if (!currTripId){
+    console.log("waiting for gear")
+}else{
+  fetch(`http://localhost:3001/api/trips/${currTripId}`, {
     method: 'GET',
-})
+ })
     .then(function (response) {
         return response.json();
     })
@@ -51,3 +56,4 @@ fetch(`http://localhost:3001/api/trips/11`, {
 
 
     })
+}
