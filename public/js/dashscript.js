@@ -1,6 +1,8 @@
 const checkURL = () => {
   let dashURL = window.location.href
   let isDashboard = false;
+
+  let addBtns = document.querySelectorAll('.addToTrip')
   //  Check to see if on main dashboard
   if (dashURL === 'http://localhost:3001/dashboard/' || dashURL === 'http://localhost:3001/dashboard') {
     isDashboard = true;
@@ -13,10 +15,53 @@ const checkURL = () => {
     document.querySelector('#chartSize').classList.add('hide');
     document.querySelector('#myChart').classList.add('hide');
     document.querySelector('#trip-loadout-box').classList.add('hide');
+    if (addBtns) {
+      addBtns.forEach(btn => {
+        btn.classList.add('hide')
+      })
+    }
   }
 }
 
+// Adds icons to gear closet items based on category
+const addIcons = () => {
+  const icons = document.querySelectorAll('#genname');
+  if (icons) {
+    icons.forEach(icon => {
+      switch (icon.textContent) {
+        case 'Shelter':
+          icon.innerHTML = '<i class="fas fa-campground"></i>'
+          break;
+        case 'Sleep System':
+          icon.innerHTML = '<i class="fas fa-bed"></i>'
+          break;
+        case 'Clothing':
+          icon.innerHTML = '<i class="fas fa-tshirt"></i>'
+          break;
+        case 'Cooking/Hydration':
+          icon.innerHTML = '<i class="fas fa-hand-holding-water"></i>'
+          break;
+        case 'Safety/Navigation':
+          icon.innerHTML = '<i class="fas fa-compass"></i>'
+          break;
+        case 'Hygeine':
+          icon.innerHTML = '<i class="fas fa-soap"></i>'
+          break;
+        case 'Electronics':
+          icon.innerHTML = '<i class="fas fa-mobile"></i>'
+          break;
+        case 'Miscellaneous':
+          icon.innerHTML = '<i class="fas fa-box-open"></i>'
+          break;
+        
+      }
+    })
+  }
+
+}
+
 checkURL();
+addIcons();
 
 const logoutUser = () => {
   console.log('clicked!');
