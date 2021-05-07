@@ -9,6 +9,15 @@
     height: 400px;
 }
 
+.my-cards:hover {
+    opacity: .7;
+}
+
+.card-link {
+    text-decoration: none;
+    color: black;
+}
+
 #trip-card {
     width: 225px;
     height: 300px;
