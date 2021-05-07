@@ -1,11 +1,16 @@
-<div class="my-cards">
-<section class="userTrips" id="trip-card">
-  <h2 class="card-head">{{name}}</h2>
-  <div class="card-body">
-    <h4 class="trip-location">{{location}}</h4>
-    <p class="trip-descrip">{{description}}</p>
-    <p class="trip-distance">{{distance_mi}} miles</p>
-    <p class="trip-date"><strong>{{starting_date}}-{{ending_date}}</strong></p>
+<a href='/dashboard/{{id}}' class="card-link">
+  <div class="my-cards">
+    <section class="userTrips" id="trip-card">
+      <h2 class="card-head">{{name}}</h2>
+      <div class="card-body">
+        <h4 class="trip-location">{{location}}</h4>
+        <p class="trip-descrip">{{description}}</p>
+        <p class="trip-distance">{{distance_mi}} miles</p>
+        <p class="trip-date">Starts:<strong>{{starting_date}}</strong></p>
+        <p class="trip-date">Ends:<strong>{{ending_date}}</strong></p>
+      </div>
+    </section>
   </div>
-</section>
-</div>
+</a>
+
+<script src="/js/tripscript.js"></script>

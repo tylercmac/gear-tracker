@@ -23,11 +23,11 @@ Trip.init(
       type: DataTypes.STRING,
     },
     starting_date: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false,
     },
     ending_date: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false,
     },
     distance_mi: {

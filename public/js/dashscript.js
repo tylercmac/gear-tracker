@@ -12,6 +12,7 @@ const checkURL = () => {
     document.querySelector('.tripLoadout').classList.add('hide');
     document.querySelector('#chartSize').classList.add('hide');
     document.querySelector('#myChart').classList.add('hide');
+    document.querySelector('#trip-loadout-box').classList.add('hide');
   }
 }
 
@@ -144,6 +145,9 @@ const removeItem = (e) => {
 // Add a trip form with fetch req to server
 document.querySelector("#tripForm").addEventListener("submit", event => {
   console.log('trip submitted');
+  const dateToFix = document.querySelector("#startingdate").value
+  console.log(dateToFix);
+  
   
   event.preventDefault();
   const fetchObj = {
@@ -172,11 +176,12 @@ document.querySelector("#tripForm").addEventListener("submit", event => {
 // Add a gear item to gear bank through this form
 document.querySelector("#bag").addEventListener("submit", event => {
   console.log('form submitted');
+  console.log(document.querySelector("#categories").value);
   
   event.preventDefault();
   const fetchObj = {
-      general_name: document.querySelector("#item").value,
-      product_name: document.querySelector("#prodname").value,
+      general_name: document.querySelector("#categories").value,
+      product_name: document.querySelector("#item").value,
       description: document.querySelector("#description").value,
       weight_oz: document.querySelector("#weight").value,
       price: document.querySelector("#price").value,
