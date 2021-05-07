@@ -1,9 +1,8 @@
-#mainTrips {
-    background-image: url(../images/background.jpg);
+#tripsPage {
+    background-image: url(../images/dashbackground.jpg);
     background-size: cover;
-    height: inherit;
     display: flex;
-    height: 100vh;
+    height:100vh;
     width: 100vw;
 }
 
@@ -39,12 +38,12 @@
 .myTrips {
     display: flex;
     flex-wrap:wrap;
-    width:50%;
-    grid-template-columns: repeat(3, 2);
+    margin-left: 0px;
+    justify-content: center;
 }
 
 .my-cards {
-    height: 400px;
+    height: 500px;
 }
 
 .my-cards:hover {
@@ -57,12 +56,13 @@
 }
 
 #trip-card {
-    width: 250px;
-    height: 325px;
-    margin: 100px;
+    width: 300px;
+    height: 450px;
+    margin: 50px;
     background-color: #9dacb7;
     border-style: solid;
     border-radius: 30px;
+    font-size: 150%;
 }
 
 .card-head {
@@ -76,7 +76,9 @@
 }
 
 .card-body {
-    width: 100%;
+    width: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
     /* height: 164px;
     border-bottom-left-radius: 27px;
     border-bottom-right-radius: 27px; */
@@ -84,20 +86,25 @@
 
 .trip-location {
     text-align: center;
-    padding: 7px;
+    padding-top: 7px;
+    padding-bottom: 7px;
 }
 
 .trip-descrip {
-    height:60px;
-    padding-left: 5px;
-    padding-right: 5px;
+    height:140px;
 }
 
 .trip-distance {
+    height: 40px;
 
 }
 
 .trip-date {
-    
+    padding-top: 20px;
 }
 
+@media screen and (max-width: 2000px) {
+    #tripsPage {
+        height: inherit;
+    }
+}
