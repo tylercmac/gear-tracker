@@ -53,10 +53,13 @@
                     <div class="gearitem" data-id={{gear.id}}>
                         <div class='bankitem' id='genname'>{{gear.general_name}}</div>
                         <div class='bankitem' id="prodname">{{gear.product_name}}</div>
-                        <div class='bankitem'><button class="btn addToTrip">+ to Trip</button></div>
                         <div class='bankitem hide' id='bankdescrip'>{{gear.description}}</div>
-                        <div class='bankitem' id='bankweight'>[{{gear.weight_oz}} oz]</div>
-                        <div class='bankitem'><button class="btn deletebtn">X</button></div>
+                        <div class='bankitem' id='bankweight' data-id={{gear.id}}>
+                            [{{gear.weight_oz}} oz]
+                            {{!-- Make the icon bigger, and if you click the icon, it adds the trip --}}
+                            <button class="btn addToTrip"><i class="fas fa-hiking"></i></button>
+                            <button class="deletebtn"><i class="fas fa-times-circle"></i></button>
+                        </div>
                     </div>
                     {{/each}}
                 </div>
