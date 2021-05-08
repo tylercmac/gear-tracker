@@ -113,6 +113,24 @@ aside {
     justify-content: space-between;
 }
 
+.fa-hiking{
+    height: 5px;
+    width: 3px;
+}
+
+.addToTrip{
+    height: 18px;
+    width: 20px;
+}
+
+#trip-name{
+    background-color: #58752B;
+}
+
+#bankheader{
+    background-color: white;
+}
+
 #chartSize{
     
     height: 300px;
