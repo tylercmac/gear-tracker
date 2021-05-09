@@ -231,11 +231,11 @@ button.removebtn {
     background-color: #252525;
 }
 
-.deletebtn {
+#delbtn {
     margin-left: .5rem;
 }
 
-button.deletebtn:hover {
+.deletebtn:hover {
     background-color: red;
 }
 

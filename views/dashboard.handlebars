@@ -50,7 +50,7 @@
                     <h3 class='dashboardheader' id="bankheader">My Gear Closet</h3>
                     <br>
                     {{#each userGear as |gear|}}
-                    <div class="gearitem" data-id={{gear.id}}>
+                    <div class="gearitem">
                         <div class='bankitem' id='genname'>{{gear.general_name}}</div>
                         <div class='bankitem' id="prodname">{{gear.product_name}}</div>
                         <div class='bankitem hide' id='bankdescrip'>{{gear.description}}</div>
@@ -58,7 +58,7 @@
                             [{{gear.weight_oz}} oz]
                             {{!-- Make the icon bigger, and if you click the icon, it adds the trip --}}
                             <button class="btn addToTrip"><i class="fas fa-hiking"></i></button>
-                            <button class="deletebtn"><i class="fas fa-times-circle"></i></button>
+                            <button id="delbtn"><i class="deletebtn fas fa-times-circle" data-id={{gear.id}}></i></button>
                         </div>
                     </div>
                     {{/each}}
