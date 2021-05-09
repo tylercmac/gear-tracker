@@ -15,9 +15,21 @@ if (!currTripId){
         console.log("gear items", labels)
         const productName = data.GearItems.map(item => item.product_name)
         console.log(productName)
-
+        
         const values = data.GearItems.map(item => item.weight_oz)
+        
+        function sum(a){
+            return (a.length && parseFloat(a[0]) + sum(a.slice(1))) || 0;
+        }
+
+        let gearTotal = sum(values).toFixed(1)
+        console.log("My gear total", gearTotal)
+        
+        let packTotal = document.getElementById('packTotal')
+        packTotal.innerHTML = `Gear Total = ${gearTotal} oz`
         console.log("weight of items", values)
+        
+
         var ctx = document.getElementById('myChart').getContext('2d');
         const myChart = new Chart(ctx, {
             type: 'doughnut',
