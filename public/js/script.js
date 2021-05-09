@@ -41,7 +41,7 @@ document.querySelector("#signupForm").addEventListener("submit", event => {
     }).then(res => {
         console.log(res);
         if (res.ok) {
-            console.log("signed up successfully!")
+            // console.log("signed up successfully!")
             location.replace("/dashboard")
         } else {
             alert("signup failed!")
