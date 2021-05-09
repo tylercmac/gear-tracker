@@ -130,7 +130,7 @@ const addToTrip = (e) => {
 // this will find the parent gear element and fetch request to remove it from API
 const deleteItem = (e) => {
 
-  const gearId = e.target.parentElement.dataset.id;
+  const gearId = e.target.dataset.id;
   confirm('Are you sure you want to delete this? You cannot undo this action.')
   if (confirm) {
     fetch(`/api/gear/${gearId}`, {
