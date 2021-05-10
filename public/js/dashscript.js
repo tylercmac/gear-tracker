@@ -102,7 +102,7 @@ const addToTrip = (e) => {
   let isDashboard = false;
 
   //  Check to see if on main dashboard
-  if (dashURL === 'http://localhost:3001/dashboard') {
+  if (dashURL === 'https://gear-wise.herokuapp.com/dashboard' || dashURL === 'https://gear-wise.herokuapp.com/dashboard/' || dashURL === 'http://localhost:3001/dashboard' || dashURL === 'http://localhost:3001/dashboard/') {
     isDashboard = true;
   }
   // Grabs currently loaded trip ID
