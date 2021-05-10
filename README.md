@@ -6,7 +6,9 @@ GearWise is an application for backpackers and campers to log and store their ge
 
 After a year of isolation and quarantine, many of us are itching to get outside and stretch our legs. GearWise will help users ensure that their trip is successful. Nothing ruins a trip quite like realizing you've forgotten something or that you're carrying more than you can handle.
 
-[Deployed on Github Pages here](https://github.com/tylercmac/gear-tracker).
+
+
+[Deployed with Heroku](https://gear-wise.herokuapp.com/)
 
 ## Usage
 
@@ -54,3 +56,5 @@ To build a trip loadout, the user navigates to the trip details page from the tr
 * Zachary Kathe
 * Ty McFarland
 * Amanda Nguyen
+
+[Github repository](https://github.com/tylercmac/gear-tracker).
