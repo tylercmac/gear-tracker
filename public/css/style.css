@@ -98,9 +98,9 @@ button.indexBtn.loginbtn.btn {
     align-items: center;
     height: 30vh;
     background-color: white;
-    margin: 0 35rem;
     border-radius: 1rem;
-
+    width: 15rem;
+    margin: 0 auto;
 }
 
 #signupUsername {
