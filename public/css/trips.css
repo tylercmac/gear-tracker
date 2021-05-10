@@ -69,9 +69,10 @@
 
 .my-cards {
     height: 500px;
+    display: grid;
 }
 
-.my-cards:hover {
+#trip-card:hover {
     opacity: .7;
 }
 
@@ -88,6 +89,7 @@
     border-style: solid;
     border-radius: 30px;
     font-size: 150%;
+    margin-top: 0;
 }
 
 .card-head {

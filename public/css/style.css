@@ -18,8 +18,15 @@
     flex-wrap: wrap;
 }
 
+button.deleteTrip.btn {
+    margin: 1rem auto;
+    border-radius: .5rem;
+}
 
-
+button.deleteTrip.btn:hover {
+    opacity: .7;
+    color: red;
+}
 
 aside {
     display: flex;

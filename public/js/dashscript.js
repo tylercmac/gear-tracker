@@ -4,7 +4,7 @@ const checkURL = () => {
   // let addBtns = document.querySelectorAll('.addToTrip')
 
   //  Check to see if on main dashboard
-  if (dashURL === 'https://gear-wise.herokuapp.com/dashboard' || dashURL === 'https://gear-wise.herokuapp.com/dashboard/') {
+  if (dashURL === 'https://gear-wise.herokuapp.com/dashboard' || dashURL === 'https://gear-wise.herokuapp.com/dashboard/' || dashURL === 'http://localhost:3001/dashboard' || dashURL === 'http://localhost:3001/dashboard/') {
     isDashboard = true;
   }
   if (!isDashboard) {

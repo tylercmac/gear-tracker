@@ -1,29 +1,27 @@
-// document.querySelector('.userTrips').addEventListener('click', (e) => {
-//   console.log('clicked!');
-//   const trip = e.target;
-//   const tripId = trip.closest('section').dataset.id;
-//   console.log(trip);
-//   console.log(tripId);
+const deleteTrip = (e) => {
 
-//   fetch(`/dashboard/${tripId}`, {
-//     method: 'GET',
-//   }).then(res => {
-//     if(res.ok) {
-//       console.log('successful route!');
+    const tripId = e.target.dataset.id;
+    console.log(tripId);
 
-//     } else {
-//       console.log(res);
 
-//     }
-//   }).then(res => 
-//     res.json()
-//   )
-//   .then(data => { 
-//   location.replace(`/dashboard/${data.id}`);
-//   })
-
-// })
-
+    if (confirm('Are you sure you want to delete this? You cannot undo this action.')) {
+        fetch(`/api/trips/${tripId}`, {
+            method: 'DELETE',
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(res => {
+            if (res.ok) {
+                location.reload();
+            } else {
+                alert("unable to process request")
+                console.log(res);
+            }
+        })
+    } else {
+        return false;
+    }
+}
 const logoutUser = () => {
     console.log('clicked!');
 
@@ -39,6 +37,20 @@ const logoutUser = () => {
 
         }
     })
+}
+
+const deleteTripBtns = document.querySelectorAll(".deleteTrip");
+
+if (deleteTripBtns) {
+    for (const btn of deleteTripBtns) {
+        btn.addEventListener("click", (event) => {
+            console.log('clicked');
+            deleteTrip(event);
+
+        });
+
+    }
+
 }
 
 document.querySelector("#logoutbtn").addEventListener("click", logoutUser)
