@@ -19,6 +19,8 @@
 }
 
 
+
+
 aside {
     display: flex;
     flex-direction: column;
@@ -28,8 +30,13 @@ aside {
 
 
 .switchColor{
-    
+    font-size: 3rem;
     color: #c57a3c;
+
+}
+
+.signup {
+    font-size: 2rem;
 }
 
 .sameAsHeader{
@@ -42,8 +49,19 @@ aside {
     color: white;
     padding: 2px;
     margin-right: 8px;
-    width:60px;
+    /* width:60px; */
     border-radius: 4px;
+}
+
+.indexBtn:hover {
+    opacity: .5;
+}
+
+button.indexBtn.loginbtn.btn {
+    margin: .2rem 1rem;
+    padding: .3rem;
+    font-size: smaller;
+    width: 3rem;
 }
 
 
@@ -79,6 +97,14 @@ aside {
     justify-content: center;
     align-items: center;
     height: 30vh;
+    background-color: white;
+    margin: 0 35rem;
+    border-radius: 1rem;
+
+}
+
+#signupUsername {
+    margin-top: 2rem;
 }
 
 #loginForm{
