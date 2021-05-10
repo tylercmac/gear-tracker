@@ -6,7 +6,7 @@
 
     <div id="nav-bar">
         <ul class="navbar">
-            <p>Welcome To GearWise</p>
+            {{!-- <p>Welcome To GearWise</p> --}}
             <a class='navlinks' href="/trips">Trips</a>
             <a class='navlinks' href="/dashboard">New Trip</a>
             <button id='logoutbtn'>Logout</button>
@@ -50,14 +50,14 @@
                     <h3 class='dashboardheader' id="bankheader">My Gear Closet</h3>
                     <br>
                     {{#each userGear as |gear|}}
-                    <div class="gearitem">
-                        <div class='bankitem' id='genname'>{{gear.general_name}}</div>
-                        <div class='bankitem' id="prodname">{{gear.product_name}}</div>
-                        <div class='bankitem hide' id='bankdescrip'>{{gear.description}}</div>
-                        <div class='bankitem' id='bankweight' data-id={{gear.id}}>
+                    <div class="gearitem addToTrip" data-id={{gear.id}}>
+                        <div class='bankitem addToTrip' id='genname' data-id={{gear.id}}>{{gear.general_name}}</div>
+                        <div class='bankitem addToTrip' id="prodname" data-id={{gear.id}}>{{gear.product_name}}</div>
+                        <div class='bankitem hide' id='bankdescrip' data-id={{gear.id}}>{{gear.description}}</div>
+                        <div class='bankitem addToTrip' id='bankweight' data-id={{gear.id}}>
                             [{{gear.weight_oz}} oz]
                             {{!-- Make the icon bigger, and if you click the icon, it adds the trip --}}
-                            <button class="btn addToTrip"><i class="fas fa-hiking"></i></button>
+                            {{!-- <button class="btn "><i class="fas fa-hiking"></i></button> --}}
                             <button id="delbtn"><i class="deletebtn fas fa-times-circle" data-id={{gear.id}}></i></button>
                         </div>
                     </div>
@@ -110,7 +110,7 @@
                         <p class="trip-item-detail" id="itemdescription">{{gear.description}}</p>
                     </div>
                     <p class="trip-item-detail" id="weightoz">{{gear.weight_oz}} oz</p>
-                    <button class="removebtn" data-id={{gear.id}}>Remove</button>
+                    <button class="removebtn btn" data-id={{gear.id}}>Remove</button>
                 </div>
                 {{/each}}
             </div>

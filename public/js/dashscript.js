@@ -1,10 +1,10 @@
 const checkURL = () => {
   let dashURL = window.location.href
   let isDashboard = false;
-  let addBtns = document.querySelectorAll('.addToTrip')
+  // let addBtns = document.querySelectorAll('.addToTrip')
 
   //  Check to see if on main dashboard
-  if (dashURL === 'http://localhost:3001/dashboard/' || dashURL === 'http://localhost:3001/dashboard') {
+  if (dashURL === 'https://gear-wise.herokuapp.com/dashboard' || dashURL === 'https://gear-wise.herokuapp.com/dashboard/') {
     isDashboard = true;
   }
   if (!isDashboard) {
@@ -15,11 +15,6 @@ const checkURL = () => {
     document.querySelector('#chartSize').classList.add('hide');
     document.querySelector('#myChart').classList.add('hide');
     document.querySelector('#trip-loadout-box').classList.add('hide');
- if (addBtns) {
-      addBtns.forEach(btn => {
-        btn.classList.add('hide')
-      })
-    }
   }
 }
 
@@ -60,8 +55,27 @@ const addIcons = () => {
 
 }
 
+const addTipText = () => {
+  const tripLoadout = document.querySelector('#trip-loadout-box');
+  const tripText = document.createElement('div')
+  tripText.classList.add('tip-text');
+
+  const hasChild = tripLoadout.querySelector("#generalName") != null;
+
+  tripText.textContent = "Click on an item in your Gear Closet to add to trip!";
+  console.log(hasChild)
+
+  if (!hasChild) {
+    tripLoadout.append(tripText);
+  } else {
+    return;
+  }
+
+}
+
 checkURL();
 addIcons();
+addTipText();
 
 const logoutUser = () => {
   console.log('clicked!');
@@ -82,7 +96,7 @@ const logoutUser = () => {
 
 // When item is chosen from gear bank, it will populate spot on current trip gear list
 const addToTrip = (e) => {
-  const currentItemId = e.target.parentElement.dataset.id;
+  const currentItemId = e.target.dataset.id;
 
   let dashURL = window.location.href
   let isDashboard = false;
@@ -131,8 +145,7 @@ const addToTrip = (e) => {
 const deleteItem = (e) => {
 
   const gearId = e.target.dataset.id;
-  confirm('Are you sure you want to delete this? You cannot undo this action.')
-  if (confirm) {
+  if (confirm('Are you sure you want to delete this? You cannot undo this action.')) {
     fetch(`/api/gear/${gearId}`, {
       method: 'DELETE',
       headers: {
@@ -147,7 +160,7 @@ const deleteItem = (e) => {
       }
     })
   } else {
-    return;
+    return false;
   }
 }
 
