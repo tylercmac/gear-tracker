@@ -4,9 +4,6 @@
     font-family: 'Noto Sans', sans-serif;
 }
 
-p {
-    font-size: small;
-}
 .account-text {
     font-family: arial;
 }
@@ -227,13 +224,25 @@ button.indexBtn.loginbtn.btn {
     button.indexBtn.btn {
         margin: auto 1rem;
         margin-bottom: 1rem;
-        font-size: x-large;
+        font-size: inherit;
     }
     #signupUsername {
         margin-top: 1rem;
     }
+    #signupForm {
+        margin-top: 2rem;
+    }
     .trip-item-name-descr {
         width: inherit;
         line-height: 1.2rem;
+    }
+    p {
+        font-size: small;
+    }
+}
+
+@media screen and (max-width: 900) {
+    p {
+        font-size: large;
     }
 }

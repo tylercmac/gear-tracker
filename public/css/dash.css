@@ -56,7 +56,6 @@
 }
 
 .dashmain {
-    font-size: 28px;
     width: 100%;
 }
 
@@ -103,6 +102,7 @@
     border: 1px black dotted;
     margin: 1rem;
     width: 100%;
+    background-color: white;
 }
 
 .tripLoadout {
@@ -320,7 +320,7 @@ input {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: .3rem;
+    padding: 0.1rem .3rem;
     border: 1px solid grey;
     background-color: gainsboro;
     box-shadow: 2px 3px 5px;
@@ -344,6 +344,12 @@ input {
 #bankweight {
     color: rebeccapurple;
     font-size: .8rem;
+    display: flex;
+    align-items: center;
+}
+
+.close:hover {
+    color: red;
 }
 
 input[list=categories], input[type=text], input[type=datetime-local], input[type=number] {
@@ -351,6 +357,21 @@ input[list=categories], input[type=text], input[type=datetime-local], input[type
     padding: 6px 10px;
     margin: 4px 0;
     box-sizing: border-box;
+}
+.new-trip-header {
+    margin-bottom: 0;
+    color: white;
+    font-size: revert;
+}
+a:not([href]):not([tabindex]) {
+    color: #c57a3c;
+}
+a:not([href]):not([tabindex]):hover {
+    color: orange;
+    cursor: pointer;
+}
+button.close {
+    padding: 0 .4rem;
 }
 
 @media screen and (max-width: 475px) {
@@ -370,12 +391,15 @@ input[list=categories], input[type=text], input[type=datetime-local], input[type
     }
     #categories-label {
         margin: auto;
+        width: 50%;
+        font-size: larger;
+        text-align: center;
     }
     .navlinks {
         padding: 0;
     }
     .navbar a, #logoutbtn {
-        font-size: 2rem;
+        font-size: 1.2rem;
     }
     body {
         line-height: 1;
@@ -388,18 +412,7 @@ input[list=categories], input[type=text], input[type=datetime-local], input[type
         padding: 0;
         margin-bottom: 2rem;
         order: 4;
-    }
-    .new-trip-header {
-        margin-bottom: 0;
-        color: white;
-        font-size: revert;
-    }
-    a:not([href]):not([tabindex]) {
-        color: #c57a3c;
-    }
-    a:not([href]):not([tabindex]):hover {
-        color: orange;
-        cursor: pointer;
+        margin-top: 3rem;
     }
     .trip-item-name-descr {
         width: auto;
@@ -407,6 +420,18 @@ input[list=categories], input[type=text], input[type=datetime-local], input[type
     }
     .tripLoadout {
         color: white;
+    }
+    input#name {
+        margin-top: 1rem;
+    }
+    .new-trip-header {
+        font-size: x-large;
+    }
+    #categories {
+        width: 80%;
+    }
+    .bankitem {
+        font-size: .8rem;
     }
 }
 
@@ -416,6 +441,7 @@ input[list=categories], input[type=text], input[type=datetime-local], input[type
     flex-direction: row;
     }
 }
+
 
 @media screen and (max-width: 2000px) {
     #tripsPage {

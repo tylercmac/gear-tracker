@@ -1,6 +1,6 @@
 const deleteTrip = (e) => {
 
-    const tripId = e.target.dataset.id;
+    const tripId = e.currentTarget.dataset.id;
     console.log(tripId);
 
 
@@ -22,22 +22,22 @@ const deleteTrip = (e) => {
         return false;
     }
 }
-const logoutUser = () => {
-    console.log('clicked!');
+// const logoutUser = () => {
+//     console.log('clicked!');
 
-    fetch("/portal/logout", {
-        method: 'GET',
-    }).then(res => {
-        if (res.ok) {
-            // alert("Logged out successfully!")
-            location.replace("/")
-        } else {
-            alert("You are not logged in!")
-            console.log(res);
+//     fetch("/portal/logout", {
+//         method: 'GET',
+//     }).then(res => {
+//         if (res.ok) {
+//             // alert("Logged out successfully!")
+//             location.replace("/")
+//         } else {
+//             alert("You are not logged in!")
+//             console.log(res);
 
-        }
-    })
-}
+//         }
+//     })
+// }
 
 const deleteTripBtns = document.querySelectorAll(".deleteTrip");
 
@@ -53,4 +53,3 @@ if (deleteTripBtns) {
 
 }
 
-document.querySelector("#logoutbtn").addEventListener("click", logoutUser)
