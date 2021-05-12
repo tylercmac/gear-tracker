@@ -9,12 +9,14 @@ const checkURL = () => {
   }
   if (!isDashboard) {
     document.querySelector('#tripform').classList.add('hide');
+    document.querySelector('#userinput').style.width = '45%';
   } else {
     document.querySelector('.currentTripBox').classList.add('hide');
     document.querySelector('.tripLoadout').classList.add('hide');
     document.querySelector('#chartSize').classList.add('hide');
     document.querySelector('#myChart').classList.add('hide');
     document.querySelector('#trip-loadout-box').classList.add('hide');
+    document.querySelector('.second-box').classList.add('hide');
   }
 }
 
