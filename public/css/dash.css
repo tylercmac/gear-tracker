@@ -76,6 +76,7 @@
 
 #left-dets {
     width: 50%;
+    padding: .5rem;
 }
 
 #right-dets {
@@ -147,6 +148,7 @@ div#trip-loadout-box {
     text-align: center;
     font-style: italic;
     font-size: 1rem;
+    margin-bottom: .2rem;
 }
 
 .trip-item-name-descr {

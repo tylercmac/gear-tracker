@@ -1,9 +1,9 @@
 #tripsPage {
     background-image: url(../images/dashbackground.jpg);
     background-size: cover;
+    background-repeat: repeat;
+    height: 100vh;
     display: flex;
-    height:100vh;
-    width: 100vw;
 }
 
 #nav-bar {
@@ -44,7 +44,7 @@ p {
 
 .btn {
     cursor: pointer;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
     font-weight: bold;
@@ -74,7 +74,7 @@ p {
     display: flex;
     flex-wrap:wrap;
     margin-left: 0px;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .my-cards {
@@ -113,12 +113,21 @@ p {
 }
 
 .card-body {
-    width: fit-content;
+    width: inherit;
     padding-left: 10px;
     padding-right: 10px;
     /* height: 164px;
     border-bottom-left-radius: 27px;
     border-bottom-right-radius: 27px; */
+}
+p.card-text {
+    height: 5rem;
+}
+.card.text-center {
+    height: 23rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    width: 17rem;
 }
 
 .trip-location {
@@ -216,6 +225,9 @@ p {
     .trip-item-name-descr {
         width: auto;
         line-height: 1.2rem;
+    }
+    #tripsPage {
+        height: inherit;
     }
 }
 

@@ -1,6 +1,6 @@
-const deleteTrip = (e) => {
-
-    const tripId = e.currentTarget.dataset.id;
+let deleteTrip = (ev) => {
+    ev.stopPropagation();
+    const tripId = ev.currentTarget.dataset.id;
     console.log(tripId);
 
 
@@ -22,24 +22,8 @@ const deleteTrip = (e) => {
         return false;
     }
 }
-// const logoutUser = () => {
-//     console.log('clicked!');
 
-//     fetch("/portal/logout", {
-//         method: 'GET',
-//     }).then(res => {
-//         if (res.ok) {
-//             // alert("Logged out successfully!")
-//             location.replace("/")
-//         } else {
-//             alert("You are not logged in!")
-//             console.log(res);
-
-//         }
-//     })
-// }
-
-const deleteTripBtns = document.querySelectorAll(".deleteTrip");
+const deleteTripBtns = document.querySelectorAll(".delete-trip");
 
 if (deleteTripBtns) {
     for (const btn of deleteTripBtns) {

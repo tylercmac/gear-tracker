@@ -18,10 +18,10 @@
     flex-wrap: wrap;
 }
 
-button.deleteTrip.btn {
+/* button.deleteTrip.btn {
     margin: 1rem auto;
     border-radius: .5rem;
-}
+} */
 
 button.deleteTrip.btn:hover {
     opacity: .7;
@@ -190,7 +190,7 @@ button.indexBtn.loginbtn.btn {
 }
 
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 475px) {
     .mobile-show {
         display: flex;
     }
