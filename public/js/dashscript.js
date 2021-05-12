@@ -21,6 +21,10 @@ const checkURL = () => {
   }
 }
 
+if (!document.querySelector('.tripItem')) {
+  document.querySelector('#myChart').classList.add('hide');
+}
+
 // Adds icons to gear closet items based on category
 const addIcons = () => {
   const icons = document.querySelectorAll('#genname');
