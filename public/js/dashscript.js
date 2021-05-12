@@ -9,13 +9,20 @@ const checkURL = () => {
   }
   if (!isDashboard) {
     document.querySelector('#tripform').classList.add('hide');
+    document.querySelector('#userinput').style.width = '100%';
+    document.querySelector('.second-box').style.width = '150%';
   } else {
     document.querySelector('.currentTripBox').classList.add('hide');
     document.querySelector('.tripLoadout').classList.add('hide');
     document.querySelector('#chartSize').classList.add('hide');
     document.querySelector('#myChart').classList.add('hide');
     document.querySelector('#trip-loadout-box').classList.add('hide');
+    document.querySelector('.second-box').classList.add('hide');
   }
+}
+
+if (!document.querySelector('.tripItem')) {
+  document.querySelector('#myChart').classList.add('hide');
 }
 
 // Adds icons to gear closet items based on category
@@ -77,22 +84,22 @@ checkURL();
 addIcons();
 addTipText();
 
-const logoutUser = () => {
-  console.log('clicked!');
+// const logoutUser = () => {
+//   console.log('clicked!');
 
-  fetch("/portal/logout", {
-    method: 'GET',
-  }).then(res => {
-    if (res.ok) {
-      // alert("Logged out successfully!")
-      location.replace("/")
-    } else {
-      alert("You are not logged in!")
-      console.log(res);
+//   fetch("/portal/logout", {
+//     method: 'GET',
+//   }).then(res => {
+//     if (res.ok) {
+//       // alert("Logged out successfully!")
+//       location.replace("/")
+//     } else {
+//       alert("You are not logged in!")
+//       console.log(res);
 
-    }
-  })
-}
+//     }
+//   })
+// }
 
 // When item is chosen from gear bank, it will populate spot on current trip gear list
 const addToTrip = (e) => {
@@ -102,7 +109,7 @@ const addToTrip = (e) => {
   let isDashboard = false;
 
   //  Check to see if on main dashboard
-  if (dashURL === 'http://localhost:3001/dashboard') {
+  if (dashURL === 'https://gear-wise.herokuapp.com/dashboard' || dashURL === 'https://gear-wise.herokuapp.com/dashboard/' || dashURL === 'http://localhost:3001/dashboard' || dashURL === 'http://localhost:3001/dashboard/') {
     isDashboard = true;
   }
   // Grabs currently loaded trip ID
@@ -144,7 +151,8 @@ const addToTrip = (e) => {
 // this will find the parent gear element and fetch request to remove it from API
 const deleteItem = (e) => {
 
-  const gearId = e.target.dataset.id;
+  const gearId = e.currentTarget.dataset.id;
+  
   if (confirm('Are you sure you want to delete this? You cannot undo this action.')) {
     fetch(`/api/gear/${gearId}`, {
       method: 'DELETE',
@@ -264,13 +272,18 @@ document.querySelector("#bag").addEventListener("submit", event => {
 })
 
 
-document.querySelector("#logoutbtn").addEventListener("click", logoutUser)
 
+const deletebtn = document.querySelectorAll('.close');
+
+if (deletebtn) {
+  for (const btn of deletebtn) {
+    btn.addEventListener('click', (event) => {
+      deleteItem(event)
+    })
+  }
+}
 
 document.querySelector(".gear-bank").addEventListener("click", (event) => {
-  if (event.target.className.indexOf("deletebtn") > -1) {
-    deleteItem(event);
-  }
   if (event.target.className.indexOf("addToTrip") > -1) {
     addToTrip(event);
   }

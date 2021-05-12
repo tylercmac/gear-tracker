@@ -1,19 +1,18 @@
-  <div class="my-cards">
-<button class="deleteTrip btn" data-id={{id}}>Remove Trip <i class="fas fa-arrow-down"></i></button>
-    <section class="userTrips" id="trip-card">
-<a href='/dashboard/{{id}}' class="card-link">
-      <h2 class="card-head">{{name}}</h2>
-      <div class="card-body">
-        <h4 class="trip-location">{{location}}</h4>
-        <p class="trip-descrip">Description: {{description}}</p>
-        <p class="trip-distance">Distance: {{distance_mi}} miles</p>
-        <div class="trip-date">
-        <p>Starts: <strong>{{starting_date}}</strong></p>
-        <p>Ends: <strong>{{ending_date}}</strong></p>
-        </div>
-      </div>
-</a>
-    </section>
+<div class="card text-center">
+  <div class="card-header">
+    {{distance_mi}} miles
+    <button type='button' class="close delete-trip" aria-label="Close" data-id={{id}}>
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
-
-<script src="/js/tripscript.js"></script>
+  <div class="card-body">
+    <h3 class="card-title">{{name}}</h3>
+    <br>
+    <h5 class="card-text">{{location}}</h5>
+    <p class="card-text">{{description}}</p>
+    <a href="/dashboard/{{id}}" class="btn btn-primary">Trip Loadout</a>
+  </div>
+  <div class="card-footer text-muted">
+    {{starting_date}} to {{ending_date}}
+  </div>
+</div>

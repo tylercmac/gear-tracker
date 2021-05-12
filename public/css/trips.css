@@ -1,14 +1,19 @@
 #tripsPage {
     background-image: url(../images/dashbackground.jpg);
     background-size: cover;
+    background-repeat: repeat;
+    height: 100vh;
     display: flex;
-    height:100vh;
-    width: 100vw;
 }
 
 #nav-bar {
     overflow: hidden;
     background-color: #4A4735;
+}
+
+.navbar {
+    margin-bottom: 0;
+    list-style: none;
 }
 
 .navbar a {
@@ -17,8 +22,13 @@
     color: #c57a3c;
 }
 
+
 .navbar a:hover {
     color: orange;
+}
+
+p {
+    margin-bottom: 0;
 }
 
 .navbar p {
@@ -34,7 +44,7 @@
 
 .btn {
     cursor: pointer;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
     font-weight: bold;
@@ -64,7 +74,7 @@
     display: flex;
     flex-wrap:wrap;
     margin-left: 0px;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .my-cards {
@@ -103,12 +113,21 @@
 }
 
 .card-body {
-    width: fit-content;
+    width: inherit;
     padding-left: 10px;
     padding-right: 10px;
     /* height: 164px;
     border-bottom-left-radius: 27px;
     border-bottom-right-radius: 27px; */
+}
+p.card-text {
+    height: 5rem;
+}
+.card.text-center {
+    height: 23rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    width: 17rem;
 }
 
 .trip-location {
@@ -130,8 +149,89 @@
     padding-top: 20px;
 }
 
-@media screen and (max-width: 2000px) {
+@media screen and (max-width: 475px) {
+    .dashmain {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .gear-form {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .gear-bank {
+        width: 100%;
+        order: 1;
+    }
+    #bag {
+        order: 2;
+        width: 100%;
+    }
+    #userinput {
+        padding-top: 0px;
+        width: 100%;
+        margin: 0;
+        order: 4;
+    }
+    button.btn.closet-button, button.save-trip-btn.btn {
+        width: 80%;
+        margin: 1rem auto;
+        font-size: larger;
+    }
+    #categories-label {
+        margin: auto;
+    }
+    .navlinks {
+        padding: 0;
+    }
+    .navbar a, #logoutbtn {
+        font-size: 1.2rem;
+    }
+    body {
+        line-height: 1;
+    }
+    .second-box {
+        width: 100%;
+        margin-top: 0;
+        order: 2;
+    }
+    #tripForm {
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+    .new-trip-header {
+        margin-bottom: 0;
+        color: white;
+        font-size: revert;
+    }
+    a:not([href]):not([tabindex]) {
+        color: #c57a3c;
+    }
+    a:not([href]):not([tabindex]):hover {
+        color: orange;
+        cursor: pointer;
+    }
+    .mytrips {
+        width: 100%;
+    }
+    #tripsPage {
+        width: 100%;
+    }
+    #chartSize {
+        margin: 0 auto;
+        text-align: center;
+        height: fit-content;
+    }
+    .trip-item-name-descr {
+        width: auto;
+        line-height: 1.2rem;
+    }
     #tripsPage {
         height: inherit;
+    }
+}
+
+@media screen and (max-width: 2000px) {
+    #tripsPage {
     }
 }

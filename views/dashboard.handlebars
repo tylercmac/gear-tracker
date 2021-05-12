@@ -1,20 +1,25 @@
 <head>
-        <link rel="stylesheet" href="/css/dash.css">
+    <link rel="stylesheet" href="/css/dash.css">
 </head>
 
 <div id="main-container">
 
     <div id="nav-bar">
         <ul class="navbar">
-            {{!-- <p>Welcome To GearWise</p> --}}
-            <a class='navlinks' href="/trips">Trips</a>
-            <a class='navlinks' href="/dashboard">New Trip</a>
-            <button id='logoutbtn'>Logout</button>
+            <li class="nav-item">
+                <a class="nav-link" href="#tripForm">New Trip</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/trips">My Trips</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/portal/logout">Logout</a>
+            </li>
         </ul>
     </div>
 
 
-<div class="dashmain">
+    <div class="dashmain">
         <div id="userinput">
             <div class="gear-form">
                 <form id="bag">
@@ -34,13 +39,17 @@
                             </select>
                         </div>
                         <br>
-                        <input class="input-field" type="text" name="item" id="item" placeholder="Gear Name" required autofocus>
+                        <input class="input-field" type="text" name="item" id="item" placeholder="Gear Name" required
+                            autofocus>
                         <br>
-                        <input class="input-field" type="text" name="description" id="description" placeholder="Description">
+                        <input class="input-field" type="text" name="description" id="description"
+                            placeholder="Description">
                         <br>
-                        <input class="input-field" type="number" name="weight" id="weight" step=".01" placeholder="Weight (oz)">
+                        <input class="input-field" type="number" name="weight" id="weight" step=".01"
+                            placeholder="Weight (oz)">
                         <br>
-                        <input class="input-field" type="number" name="price" id="price" step=".01" placeholder="Price ($)">
+                        <input class="input-field" type="number" name="price" id="price" step=".01"
+                            placeholder="Price ($)">
                         <br>
                     </div>
                     <button class="btn closet-button">Add to Closet</button>
@@ -56,44 +65,49 @@
                         <div class='bankitem hide' id='bankdescrip' data-id={{gear.id}}>{{gear.description}}</div>
                         <div class='bankitem addToTrip' id='bankweight' data-id={{gear.id}}>
                             [{{gear.weight_oz}} oz]
-                            {{!-- Make the icon bigger, and if you click the icon, it adds the trip --}}
-                            {{!-- <button class="btn "><i class="fas fa-hiking"></i></button> --}}
-                            <button id="delbtn"><i class="deletebtn fas fa-times-circle" data-id={{gear.id}}></i></button>
+                            <button type="button" class="close" aria-label="Close" data-id={{gear.id}}>
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
                     </div>
                     {{/each}}
                 </div>
             </div>
         </div>
+        <form id="tripForm">
+            <h3 class='new-trip-header mobile-hide'>Start a new trip!</h3>
+            <div id="trip-inputs">
+                <h3 class='new-trip-header mobile-show'>Start a new trip!</h3>
+                <input class="input-field2" type="text" name="name" id="name" placeholder="Trip name" required>
+                <br>
+                <input class="input-field2" type="text" name="location" id="location" placeholder="Trip Location"
+                    required>
+                <br>
+                <input class="input-field2" type="text" name="tripdescription" id="tripdescription"
+                    placeholder="Trip Description">
+                <br>
+                <input class="input-field2" type="datetime-local" name="startingdate" id="startingdate"
+                    placeholder="Starting Date: YYYY/MM/DD" required>
+                <br>
+                <input class="input-field2" type="datetime-local" name="endingdate" id="endingdate"
+                    placeholder="Ending Date: YYYY/MM/DD" required>
+                <br>
+                <input class="input-field2" type="number" name="distance" id="distance" placeholder="Distance (miles)"
+                    required>
+                <br>
+                <button class='save-trip-btn btn'>Save Trip</button>
+            </div>
+        </form>
 
         <div class="second-box">
-            <form id="tripForm">
-                <h3 class='new-trip-header'>Start a new trip!</h3>
-                <div id="trip-inputs">
-                    <input class="input-field2" type="text" name="name" id="name" placeholder="Trip name" required>
-                    <br>
-                    <input class="input-field2" type="text" name="location" id="location" placeholder="Trip Location" required>
-                    <br>
-                    <input class="input-field2" type="text" name="tripdescription" id="tripdescription" placeholder="Trip Description">
-                    <br>
-                    <input class="input-field2" type="datetime-local" name="startingdate" id="startingdate"
-                        placeholder="Starting Date: YYYY/MM/DD" required>
-                    <br>
-                    <input class="input-field2" type="datetime-local" name="endingdate" id="endingdate" placeholder="Ending Date: YYYY/MM/DD" required>
-                    <br>
-                    <input class="input-field2" type="number" name="distance" id="distance" placeholder="Distance (miles)" required>
-                    <br>
-                <button class='save-trip-btn btn'>Save Trip</button>
-                </div>
-            </form>
             <div class="currentTripBox" data-id={{currTrip.id}}>
                 <h1 id="trip-name">{{currTrip.name}}</h1>
                 <p id="trip-location">{{currTrip.location}}</p>
                 <div id="trip-dets">
                     <div id="left-dets">
-                        <p>Length:   <strong>{{currTrip.distance_mi}} miles</strong></p>
-                        <p>Start Date:  <strong>{{currTrip.starting_date}}</strong></p>
-                        <p>End Date:  <strong>{{currTrip.ending_date}}</strong></p>
+                        <p>Length: <strong>{{currTrip.distance_mi}} miles</strong></p>
+                        <p>Start Date: <strong>{{currTrip.starting_date}}</strong></p>
+                        <p>End Date: <strong>{{currTrip.ending_date}}</strong></p>
                     </div>
                     <div id="right-dets">
                         <p id="trip-descr">{{currTrip.description}}</p>
@@ -107,10 +121,10 @@
                     <h4 class="trip-item-detail" id="generalName">{{gear.general_name}}</h4>
                     <div class="trip-item-name-descr">
                         <p class="trip-item-detail" id="productName">{{gear.product_name}}</p>
-                        <p class="trip-item-detail" id="itemdescription">{{gear.description}}</p>
                     </div>
                     <p class="trip-item-detail" id="weightoz">{{gear.weight_oz}} oz</p>
                     <button class="removebtn btn" data-id={{gear.id}}>Remove</button>
+                    <p class="trip-item-detail" id="itemdescription">{{gear.description}}</p>
                 </div>
                 {{/each}}
             </div>
@@ -120,10 +134,11 @@
         <div id="chartSize">
             <h3 id="packTotal"></h3>
             <canvas id="myChart" width="150" height="150"></canvas>
-           <iframe src="https://widgetscode.com/wc/uc/all?skin=blk0" style="width:320px;height:273px;margin:0;border:0"></iframe>
+            <iframe src="https://widgetscode.com/wc/uc/all?skin=blk0" style="width:320px;height:273px;margin:0;border:0"
+                class="converter mobile-hide"></iframe>
         </div>
-        
-</div>
+
+    </div>
 
 
     <script src="/js/dashscript.js"></script>
