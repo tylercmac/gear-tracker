@@ -96,7 +96,7 @@ button.indexBtn.loginbtn.btn {
     background: #58752B;
     color: #c57a3c;
     text-align: center;
-    
+    margin-bottom: 0;
 }
 
 #signupForm{
@@ -179,4 +179,58 @@ button.indexBtn.loginbtn.btn {
     
     height: 300px;
     width: 300px;
+}
+
+.mobile-show {
+    display: none;
+}
+
+.new-user {
+    font-size: larger;
+}
+
+
+@media screen and (max-width: 375px) {
+    .mobile-show {
+        display: flex;
+    }
+    .account-text {
+        margin: 1rem 1rem;
+    }
+    #loginEmail {
+        margin-top: 2rem;
+        margin-right: 1rem;
+        width: 100%;
+    }
+    #loginPassword {
+        margin-top: 1rem;
+        margin-right: 1rem;
+        width: 100%;
+    }
+    .mobile-hide {
+        display: none;
+    }
+    #loginForm {
+        flex-wrap: wrap;
+    }
+    button.indexBtn.loginbtn.btn {
+        font-size: smaller;
+        width: 4rem;
+        margin: .5rem auto;
+        margin-bottom: .8rem;
+        width: 90%;
+        font-size: x-large;
+    }
+    button.indexBtn.btn {
+        margin: auto 1rem;
+        margin-bottom: 1rem;
+        font-size: x-large;
+    }
+    #signupUsername {
+        margin-top: 1rem;
+    }
+    .trip-item-name-descr {
+        width: inherit;
+        line-height: 1.2rem;
+    }
 }

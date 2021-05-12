@@ -7,8 +7,8 @@
     <div id="nav-bar">
         <ul class="navbar">
             {{!-- <p>Welcome To GearWise</p> --}}
+            <a onClick= "document.getElementById('tripForm').scrollIntoView();" class='navlinks'>New Trip</a>
             <a class='navlinks' href="/trips">Trips</a>
-            <a class='navlinks' href="/dashboard">New Trip</a>
             <button id='logoutbtn'>Logout</button>
         </ul>
     </div>
@@ -120,7 +120,7 @@
         <div id="chartSize">
             <h3 id="packTotal"></h3>
             <canvas id="myChart" width="150" height="150"></canvas>
-           <iframe src="https://widgetscode.com/wc/uc/all?skin=blk0" style="width:320px;height:273px;margin:0;border:0"></iframe>
+           <iframe src="https://widgetscode.com/wc/uc/all?skin=blk0" style="width:320px;height:273px;margin:0;border:0" class="converter mobile-hide"></iframe>
         </div>
         
 </div>

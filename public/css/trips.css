@@ -11,14 +11,23 @@
     background-color: #4A4735;
 }
 
+.navbar {
+    margin-bottom: 0;
+}
+
 .navbar a {
     text-decoration: none;
     font-size: 50px;
     color: #c57a3c;
 }
 
+
 .navbar a:hover {
     color: orange;
+}
+
+p {
+    margin-bottom: 0;
 }
 
 .navbar p {
@@ -130,8 +139,86 @@
     padding-top: 20px;
 }
 
+@media screen and (max-width: 475px) {
+    .dashmain {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .gear-form {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .gear-bank {
+        width: 100%;
+        order: 1;
+    }
+    #bag {
+        order: 2;
+        width: 100%;
+    }
+    #userinput {
+        padding-top: 0px;
+        width: 100%;
+        margin: 0;
+        order: 4;
+    }
+    button.btn.closet-button, button.save-trip-btn.btn {
+        width: 80%;
+        margin: 1rem auto;
+        font-size: larger;
+    }
+    #categories-label {
+        margin: auto;
+    }
+    .navlinks {
+        padding: 0;
+    }
+    .navbar a, #logoutbtn {
+        font-size: 2rem;
+    }
+    body {
+        line-height: 1;
+    }
+    .second-box {
+        width: 100%;
+        margin-top: 0;
+        order: 2;
+    }
+    #tripForm {
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+    .new-trip-header {
+        margin-bottom: 0;
+        color: white;
+        font-size: revert;
+    }
+    a:not([href]):not([tabindex]) {
+        color: #c57a3c;
+    }
+    a:not([href]):not([tabindex]):hover {
+        color: orange;
+        cursor: pointer;
+    }
+    .mytrips {
+        width: 100%;
+    }
+    #tripsPage {
+        width: 100%;
+    }
+    #chartSize {
+        margin: 0 auto;
+        text-align: center;
+        height: fit-content;
+    }
+    .trip-item-name-descr {
+        width: auto;
+        line-height: 1.2rem;
+    }
+}
+
 @media screen and (max-width: 2000px) {
     #tripsPage {
-        height: inherit;
     }
 }

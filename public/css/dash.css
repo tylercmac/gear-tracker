@@ -93,7 +93,7 @@
 
 .second-box {
     display: flex;
-    width: 50%;
+    width: 70%;
     justify-content: center;
     margin: 2rem 0;
     flex-wrap: wrap;
@@ -246,6 +246,7 @@ button.removebtn {
 
 .btn:hover {
     background-color: #252525;
+    color: white;
 }
 
 #delbtn {
@@ -344,6 +345,62 @@ input[list=categories], input[type=text], input[type=datetime-local], input[type
     padding: 6px 10px;
     margin: 4px 0;
     box-sizing: border-box;
+}
+
+@media screen and (max-width: 475px) {
+    .dashmain {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #userinput {
+        padding-top: 0px;
+        width: 100%;
+        margin: 0;
+    }
+    button.btn.closet-button {
+        width: 80%;
+        margin: 1rem auto;
+        font-size: larger;
+    }
+    #categories-label {
+        margin: auto;
+    }
+    .navlinks {
+        padding: 0;
+    }
+    .navbar a, #logoutbtn {
+        font-size: 2rem;
+    }
+    body {
+        line-height: 1;
+    }
+    .second-box {
+        width: 100%;
+        margin-top: 0;
+    }
+    #tripForm {
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+    .new-trip-header {
+        margin-bottom: 0;
+        color: white;
+        font-size: revert;
+    }
+    a:not([href]):not([tabindex]) {
+        color: #c57a3c;
+    }
+    a:not([href]):not([tabindex]):hover {
+        color: orange;
+        cursor: pointer;
+    }
+    .trip-item-name-descr {
+        width: auto;
+        line-height: 1.2rem;
+    }
+    .tripLoadout {
+        color: white;
+    }
 }
 
 @media screen and (max-width: 768px) {
