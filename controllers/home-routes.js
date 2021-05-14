@@ -55,7 +55,11 @@ router.get("/trips", apiAuth, async (req, res) => {
       where: { 
         user_id: req.session.user.id
       }
-    })
+    },
+      {
+        include: [{model: GearItem}]
+      }
+    )
     const userTrips = userTripData.map((Trip) => Trip.get({ plain: true }))
     
     res.render("trips", { userTrips })

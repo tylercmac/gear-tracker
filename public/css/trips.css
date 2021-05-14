@@ -173,6 +173,10 @@ p.card-text {
         margin: 0;
         order: 4;
     }
+    p.card-text.gear-weight {
+        height: fit-content;
+        color: red;
+    }
     button.btn.closet-button, button.save-trip-btn.btn, button.updater-button.btn{
         width: 80%;
         margin: 1rem auto;

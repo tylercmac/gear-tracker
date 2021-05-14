@@ -37,3 +37,31 @@ if (deleteTripBtns) {
 
 }
 
+const loadGearTotal = () => {
+    const tripIds = document.querySelectorAll('.gear-weight');
+    console.log(tripIds[0].dataset.id);
+    for (const tripId of tripIds) {
+        fetch(`/api/trips/${tripId.dataset.id}`, {
+            method: 'GET',
+        })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                const values = data.GearItems.map(item => item.weight_oz)
+            
+                function sum(a){
+                    return (a.length && parseFloat(a[0]) + sum(a.slice(1))) || 0;
+                }
+        
+                let gearTotal = sum(values).toFixed(1)
+                console.log("Gear total", gearTotal)
+                const poundConv = (gearTotal / 16).toFixed(2)
+                tripId.textContent = `BASEWEIGHT: ${poundConv} lbs`
+            })
+    }
+}
+    
+
+loadGearTotal();
+
