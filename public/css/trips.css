@@ -90,7 +90,10 @@ p {
     text-decoration: none;
     color: black;
 }
-
+p.card-text.gear-weight {
+    height: fit-content;
+    color: red;
+}
 #trip-card {
     width: 300px;
     height: 450px;
@@ -124,7 +127,7 @@ p.card-text {
     height: 5rem;
 }
 .card.text-center {
-    height: 23rem;
+    height: fit-content;
     margin-top: 2rem;
     margin-bottom: 1rem;
     width: 17rem;
@@ -173,14 +176,15 @@ p.card-text {
         margin: 0;
         order: 4;
     }
-    p.card-text.gear-weight {
-        height: fit-content;
-        color: red;
-    }
     button.btn.closet-button, button.save-trip-btn.btn, button.updater-button.btn{
         width: 80%;
         margin: 1rem auto;
         font-size: larger;
+    }
+
+    p.card-text.gear-weight {
+        height: fit-content;
+        color: red;
     }
     #categories-label {
         margin: auto;

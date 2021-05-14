@@ -66,9 +66,10 @@ aside {
 
 button.indexBtn.loginbtn.btn {
     margin: .2rem 1rem;
+    margin-left: 0;
     padding: .3rem;
     font-size: smaller;
-    width: 3rem;
+    width: 4rem;
 }
 
 
@@ -91,7 +92,6 @@ button.indexBtn.loginbtn.btn {
 
 .greyHeading{
     padding-bottom: 20px;
-    padding-left: 20px;
     padding-top: 15px;
     background: #58752B;
     color: #c57a3c;
@@ -100,14 +100,21 @@ button.indexBtn.loginbtn.btn {
 }
 
 #signupForm{
-    display: grid;
+    display: flex;
     justify-content: center;
     align-items: center;
-    height: 30vh;
     background-color: white;
-    border-radius: 1rem;
-    width: 15rem;
+    border-radius: .4rem;
+    width: 20rem;
     margin: 0 auto;
+}
+
+.account-text {
+    margin: 1rem 2rem;
+}
+
+.form-control {
+    width: auto;
 }
 
 #signupUsername {
@@ -158,7 +165,7 @@ button.indexBtn.loginbtn.btn {
 }
 
 #logo {
-    height: 10rem;
+    height: 7rem;
 }
 
 .gearitem:hover {
@@ -187,24 +194,29 @@ button.indexBtn.loginbtn.btn {
 
 .new-user {
     font-size: larger;
+    text-align: center;
 }
 
+button.indexBtn.sign-up.btn {
+    margin: 1rem;
+    font-size: inherit;
+}
 
 @media screen and (max-width: 475px) {
     .mobile-show {
         display: flex;
     }
     .account-text {
-        margin: 1rem 1rem;
+        margin: 1rem 2rem;
     }
     #loginEmail {
         margin-top: 2rem;
-        margin-right: 1rem;
+        margin-right: 2rem;
         width: 100%;
     }
     #loginPassword {
         margin-top: 1rem;
-        margin-right: 1rem;
+        margin-right: 2rem;
         width: 100%;
     }
     .mobile-hide {
@@ -218,12 +230,12 @@ button.indexBtn.loginbtn.btn {
         width: 4rem;
         margin: .5rem auto;
         margin-bottom: .8rem;
-        width: 90%;
+        width: inherit;
         font-size: x-large;
+        padding: 0.2rem 1rem;
     }
     button.indexBtn.btn {
-        margin: auto 1rem;
-        margin-bottom: 1rem;
+        margin: 1rem;
         font-size: inherit;
     }
     #signupUsername {

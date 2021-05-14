@@ -1,7 +1,7 @@
 <form id="loginForm">
     
-    <input type="text" class="account-text" name="email" id='loginEmail' placeholder="email"/>
-    <input type="password" class="account-text" name="password" id='loginPassword'  placeholder="password"/>
+    <input type="text" class="account-text form-control" name="email" id='loginEmail' placeholder="Email"/>
+    <input type="password" class="account-text form-control" name="password" id='loginPassword'  placeholder="Password"/>
     <button class="indexBtn loginbtn btn">Login</button>
 </form>
 <div class="image">
@@ -15,13 +15,12 @@
 <br class="mobile-hide">
 <br class="mobile-hide">
 <br class="mobile-hide">
-<h3 class="center switchColor signup mobile-hide">signup</h3>
-<form id="signupForm">
-    <div class="mobile-show new-user justify-content-center mt-2">New User? Register here:</div>
-    <input type="text" class="account-text" name="username" id='signupUsername' placeholder="username"/>
-    <input type="text" class="account-text" name="email" id='signupEmail' placeholder="email"/>
-    <input type="password" class="account-text" name="password" id='signupPassword' placeholder="password"/>
-    <button class="indexBtn btn">Sign up</button>
+<form id="signupForm" class="card">
+    <div class="new-user justify-content-center card-body">New User? Register here:</div>
+    <input type="text" class="account-text form-control" name="username" id='signupUsername' placeholder="Username"/>
+    <input type="text" class="account-text form-control" name="email" id='signupEmail' placeholder="Email"/>
+    <input type="password" class="account-text form-control" name="password" id='signupPassword' placeholder="Password"/>
+    <button class="indexBtn sign-up btn">Sign up</button>
 </form>
 </div>
 <script src="js/script.js"></script>
