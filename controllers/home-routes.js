@@ -21,7 +21,7 @@ router.get("/dashboard", apiAuth, async (req, res) => {
       }
       const userGear = userGearData.map((gear) => gear.get({ plain: true }))
       console.log(userGear.general_name);
-      
+      userGear.username = req.session.user.username;
       res.render("dashboard", { userGear })
     } catch (err) {
       res.json(err);
