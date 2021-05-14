@@ -1,3 +1,5 @@
+// const e = require("express");
+
 const checkURL = () => {
   let dashURL = window.location.href
   let isDashboard = false;
@@ -117,7 +119,7 @@ const addToTrip = (e) => {
 
   // If on dashboard, alerts that no trip to add item to
   if (isDashboard === true) {
-    alert('no trip to assign this item to!')
+    updateGearForm(currentItemId);
     return;
   }
   //  Upates gear item to that trip on page NOT WORKING
@@ -146,13 +148,36 @@ const addToTrip = (e) => {
 
 }
 
+const updateGearForm = (itemID) => {
+  const categories = document.getElementById('categories');
+  const item = document.getElementById('item');
+  const description = document.getElementById('description');
+  const weight = document.getElementById('weight');
+  const price = document.getElementById('price');
+  const gearBtn = document.querySelector('.closet-button-div');
+
+  fetch(`/api/gear/${itemID}`, { method: "get" })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      categories.value = data.general_name;
+      item.value = data.product_name;
+      description.value = data.description;
+      weight.value = data.weight_oz;
+      price.value = data.price;
+    })
+  let newButton = `<button class="btn updater-button" data-id=${itemID}>Update Item</button>`;
+  gearBtn.innerHTML = newButton;
+
+}
 
 
 // this will find the parent gear element and fetch request to remove it from API
 const deleteItem = (e) => {
 
   const gearId = e.currentTarget.dataset.id;
-  
+
   if (confirm('Are you sure you want to delete this? You cannot undo this action.')) {
     fetch(`/api/gear/${gearId}`, {
       method: 'DELETE',
@@ -243,32 +268,71 @@ document.querySelector("#tripForm").addEventListener("submit", event => {
 
 // Add a gear item to gear bank through this form
 document.querySelector("#bag").addEventListener("submit", event => {
-  console.log('form submitted');
-  console.log(document.querySelector("#categories").value);
+  const updateBtn = document.querySelector('.updater-button')
+  
+  if (updateBtn) {
+    console.log('update function reached');
+    
+    const itemID = updateBtn.getAttribute("data-id");
+    const categories = document.getElementById('categories').value;
+    const item = document.getElementById('item').value;
+    const description = document.getElementById('description').value;
+    const weight = document.getElementById('weight').value;
+    const price = document.getElementById('price').value;
+    const gearBtn = document.querySelector('.closet-button-div');
+    fetch(`api/gear/update/${itemID}`, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        categories, item, description, weight, price
+      })
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        categories.value = "";
+        item.value = "";
+        description.value = "";
+        weight.value = "";
+        price.value = "";
 
-  event.preventDefault();
-  const fetchObj = {
-    general_name: document.querySelector("#categories").value,
-    product_name: document.querySelector("#item").value,
-    description: document.querySelector("#description").value,
-    weight_oz: document.querySelector("#weight").value,
-    price: document.querySelector("#price").value,
+        let newButton = `<button class="btn closet-button">Add to Closet</button>`;
+        gearBtn.innerHTML = newButton;
+      })
+      .catch(function (err) {
+        console.log("Fetch Error :-S", err);
+      });
+  } else {
+    console.log('form submitted');
+
+    event.preventDefault();
+    const fetchObj = {
+      general_name: document.querySelector("#categories").value,
+      product_name: document.querySelector("#item").value,
+      description: document.querySelector("#description").value,
+      weight_oz: document.querySelector("#weight").value,
+      price: document.querySelector("#price").value,
+    }
+    fetch("/api/gear", {
+      method: "POST",
+      body: JSON.stringify(fetchObj),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(res => {
+      if (res.ok) {
+        location.reload();
+      } else {
+        alert("couldn't add item!")
+        location.reload();
+        console.log(res);
+      }
+    })
   }
-  fetch("/api/gear", {
-    method: "POST",
-    body: JSON.stringify(fetchObj),
-    headers: {
-      "Content-Type": "application/json"
-    }
-  }).then(res => {
-    if (res.ok) {
-      location.reload();
-    } else {
-      alert("couldn't add item!")
-      location.reload();
-      console.log(res);
-    }
-  })
 })
 
 
