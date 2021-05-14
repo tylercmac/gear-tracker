@@ -94,22 +94,27 @@ router.put('/update/:id', async (req, res) => {
   console.log('route reached :)');
 
   console.log('reqbody:', req.body)
-  let itemID = (req.params.id);
+  let itemID = Number(req.params.id);
   console.log(itemID);
+  // const item = await GearItem.findByPk(itemID);
+  // console.log(item);
+  
 
   try {
     const itemToUpdate = await GearItem.update(
-      {
-        id: itemID,
-      },
       {
         general_name: req.body.categories,
         product_name: req.body.item,
         description: req.body.description,
         weight_oz: req.body.weight,
-        price: req.body.price,
-      });
-      console.log(`My item that I updated`, itemToUpdate);
+        price: req.body.price
+      },
+      {
+        where: {
+          id: itemID
+        }
+      })
+      console.log(`My item that I updated:`, itemToUpdate);
       
       res.status(200).json(itemToUpdate);
     } catch (err) {

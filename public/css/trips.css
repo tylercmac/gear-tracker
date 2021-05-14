@@ -173,7 +173,7 @@ p.card-text {
         margin: 0;
         order: 4;
     }
-    button.btn.closet-button, button.save-trip-btn.btn {
+    button.btn.closet-button, button.save-trip-btn.btn, button.updater-button.btn{
         width: 80%;
         margin: 1rem auto;
         font-size: larger;
