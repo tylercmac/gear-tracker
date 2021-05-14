@@ -70,7 +70,7 @@ router.delete('/:id', async (req, res) => {
   }
 })
 
-//  How to add the trip to this specific gear item?
+
 router.put('/:id', async (req, res) => {
   console.log('route reached!');
   
@@ -87,6 +87,34 @@ router.put('/:id', async (req, res) => {
   } catch (err) {
     console.log(err);
   }
+
+})
+
+router.put('/update/:id', async (req, res) => {
+  console.log('route reached :)');
+
+  console.log('reqbody:', req.body)
+  let itemID = (req.params.id);
+  console.log(itemID);
+
+  try {
+    const itemToUpdate = await GearItem.update(
+      {
+        id: itemID,
+      },
+      {
+        general_name: req.body.categories,
+        product_name: req.body.item,
+        description: req.body.description,
+        weight_oz: req.body.weight,
+        price: req.body.price,
+      });
+      console.log(`My item that I updated`, itemToUpdate);
+      
+      res.status(200).json(itemToUpdate);
+    } catch (err) {
+      res.status(500).json(err);
+    }
 
 })
 
