@@ -260,7 +260,7 @@ document.querySelector("#tripForm").addEventListener("submit", event => {
       location.reload();
     } else {
       alert("couldn't add trip!")
-      location.reload();
+      location.redirect(`/dashboard/${res.id}`);
       console.log(res);
     }
   })

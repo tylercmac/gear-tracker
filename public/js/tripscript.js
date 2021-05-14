@@ -39,7 +39,6 @@ if (deleteTripBtns) {
 
 const loadGearTotal = () => {
     const tripIds = document.querySelectorAll('.gear-weight');
-    console.log(tripIds[0].dataset.id);
     for (const tripId of tripIds) {
         fetch(`/api/trips/${tripId.dataset.id}`, {
             method: 'GET',
