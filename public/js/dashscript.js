@@ -302,6 +302,7 @@ document.querySelector("#bag").addEventListener("submit", event => {
 
         let newButton = `<button class="btn closet-button">Add to Closet</button>`;
         gearBtn.innerHTML = newButton;
+        location.reload()
       })
       .catch(function (err) {
         console.log("Fetch Error :-S", err);
