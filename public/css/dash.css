@@ -4,7 +4,6 @@
     font-family: 'Noto Sans', sans-serif;
 }
 
-
 #nav-bar {
     overflow: hidden;
     background-color: #4A4735;
@@ -12,7 +11,7 @@
 
 .navbar a {
     text-decoration: none;
-    font-size: 50px;
+    font-size: 2rem;
     color: #c57a3c;
 }
 
