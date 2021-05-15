@@ -14,12 +14,14 @@
 .navbar {
     margin-bottom: 0;
     list-style: none;
+    justify-content: space-around;
+    display: flex;
 }
 
 .navbar a {
     text-decoration: none;
-    font-size: 50px;
     color: #c57a3c;
+    font-size: 2rem;
 }
 
 
