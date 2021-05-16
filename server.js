@@ -11,7 +11,7 @@ const { truncate } = require('./models/User');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 const sess = {
   secret: process.env.SECRET,
