@@ -5,7 +5,7 @@
 <div id="main-container">
 
     <div id="nav-bar">
-        <ul class="navbar">
+        <ul class="navbar mobile-hide">
             <li class="nav-item">
                 <a class="nav-link" href="#tripForm">New Trip</a>
             </li>
@@ -17,6 +17,24 @@
             </li>
         </ul>
     </div>
+
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-gearlight p-4">
+            <a class="nav-link navbar-brand" href="#tripForm">New Trip</a>
+            <a class="nav-link navbar-brand" href="/trips">{{userGear.username}}'s Trips</a>
+            <a class="nav-link navbar-brand" href="/portal/logout">Logout</a>
+        </div>
+    </div>
+    <nav class="navbar navbar-dark d-sm-block d-md-none">
+        <div class="container-fluid">
+            <button class="navbar-toggler align-right navbar-nav-scroll" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <p class="text-center">{{userGear.username}}'s Dashboard</p>
+        </div>
+    </nav>
 
 
     <div class="dashmain">
@@ -52,13 +70,12 @@
                         <br>
                     </div>
                     <div class="closet-button-div">
-                        <button class="btn closet-button">Add to Closet</button>
+                        <button class="mybtn closet-button">Add to Closet</button>
                     </div>
                 </form>
 
                 <div class="gear-bank">
-                    <h3 class='dashboardheader' id="bankheader">My Gear Closet</h3>
-                    <br>
+                    <h3 class='dashboardheader' id="bankheader">GEAR CLOSET</h3>
                     {{#each userGear as |gear|}}
                     <div class="gearitem addToTrip" data-id={{gear.id}}>
                         <div class='bankitem addToTrip' id='genname' data-id={{gear.id}}>{{gear.general_name}}</div>
@@ -66,7 +83,7 @@
                         <div class='bankitem hide' id='bankdescrip' data-id={{gear.id}}>{{gear.description}}</div>
                         <div class='bankitem addToTrip' id='bankweight' data-id={{gear.id}}>
                             [{{gear.weight_oz}} oz]
-                            <button type="button" class="close" aria-label="Close" data-id={{gear.id}}>
+                            <button type="button" class="btn btn-outline-danger close" aria-label="Close" data-id={{gear.id}}>
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -96,7 +113,7 @@
                 <input class="input-field2" type="number" name="distance" id="distance" placeholder="Distance (miles)"
                     required>
                 <br>
-                <button class='save-trip-btn btn'>Save Trip</button>
+                <button class='save-trip-btn mybtn'>Save Trip</button>
             </div>
         </form>
 
@@ -124,7 +141,7 @@
                         <p class="trip-item-detail" id="productName">{{gear.product_name}}</p>
                     </div>
                     <p class="trip-item-detail" id="weightoz">{{gear.weight_oz}} oz</p>
-                    <button class="removebtn btn" data-id={{gear.id}}>Remove</button>
+                    <button class="removebtn mybtn" data-id={{gear.id}}>Remove</button>
                     <p class="trip-item-detail" id="itemdescription">{{gear.description}}</p>
                 </div>
                 {{/each}}
