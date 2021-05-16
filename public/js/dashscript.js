@@ -1,6 +1,7 @@
+let isDashboard;
 const checkURL = () => {
   let dashURL = window.location.href
-  let isDashboard = false;
+  isDashboard = false;
   // let addBtns = document.querySelectorAll('.addToTrip')
 
   //  Check to see if on main dashboard
@@ -19,10 +20,35 @@ const checkURL = () => {
     document.querySelector('#trip-loadout-box').classList.add('hide');
     document.querySelector('.second-box').classList.add('hide');
   }
-}
+  // If there aren't any items in trip loadout, don't show the chart yet.
+  if (!document.querySelector('.tripItem')) {
+    document.querySelector('#myChart').classList.add('hide');
+  }
 
-if (!document.querySelector('.tripItem')) {
-  document.querySelector('#myChart').classList.add('hide');
+
+  // WORKING ON NEW TRIP LINK
+  const newTrip = document.querySelectorAll('.new-trip')
+  if (newTrip) {
+    if (isDashboard) {
+      newTrip.forEach(link => {
+        link.addEventListener('click', () => {
+          window.scrollTo(0, document.body.scrollHeight);
+        })
+        // link.classList.add('hide');
+      })
+    } else {
+      newTrip.forEach(link => {
+        link.addEventListener('click', async () => {
+          window.location.replace('/dashboard');
+        //   function Scrolldown() {
+        //     window.scroll(0, 300);
+        //   }
+
+        //   window.onload = Scrolldown;
+        })
+      })
+    }
+  }
 }
 
 // Adds icons to gear closet items based on category
@@ -251,10 +277,10 @@ document.querySelector("#tripForm").addEventListener("submit", event => {
 // Add a gear item to gear bank through this form
 document.querySelector("#bag").addEventListener("submit", event => {
   const updateBtn = document.querySelector('.updater-button')
-  
+
   if (updateBtn) {
     console.log('update function reached');
-    
+
     const itemID = updateBtn.getAttribute("data-id");
     const categories = document.getElementById('categories').value;
     const item = document.getElementById('item').value;
