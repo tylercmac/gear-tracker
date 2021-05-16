@@ -1,6 +1,3 @@
-// const e = require("express");
-
-
 const checkURL = () => {
   let dashURL = window.location.href
   let isDashboard = false;
