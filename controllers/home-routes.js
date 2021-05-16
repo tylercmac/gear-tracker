@@ -41,6 +41,7 @@ router.get("/dashboard/:id", apiAuth, async (req, res) => {
       })
       const userGear = userGearData.map((gear) => gear.get({ plain: true }))
       const currTrip = currTripData.get({ plain: true })
+      userGear.username = req.session.user.username;
       
       res.render("dashboard", { userGear, currTrip })
     // } catch (err) {

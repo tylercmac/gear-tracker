@@ -14,12 +14,15 @@
 .navbar {
     margin-bottom: 0;
     list-style: none;
+    justify-content: space-around;
+    display: flex;
+    background-color: #4A4735;
 }
 
 .navbar a {
     text-decoration: none;
-    font-size: 50px;
     color: #c57a3c;
+    font-size: 2rem;
 }
 
 
@@ -33,16 +36,16 @@ p {
 
 .navbar p {
     text-align: center;
-    font-size: 50px;
     color: #c57a3c;
-    display: block;
+    margin: 0 auto;
+    font-size: 1.5rem;
 }
 
 .navlinks {
     padding: 1rem;
 }
 
-.btn {
+.mybtn {
     cursor: pointer;
     margin-top: 1rem;
     padding: 0.5rem 1rem;
@@ -93,6 +96,7 @@ p {
 p.card-text.gear-weight {
     height: fit-content;
     color: red;
+    margin-bottom: 1rem;
 }
 #trip-card {
     width: 300px;

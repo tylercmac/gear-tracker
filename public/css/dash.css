@@ -4,15 +4,24 @@
     font-family: 'Noto Sans', sans-serif;
 }
 
-
+.nav-link {
+    color: #c57a3c;
+}
+.nav-link:hover {
+    color: #ebb88e;
+}
 #nav-bar {
     overflow: hidden;
     background-color: #4A4735;
 }
+.bg-gearlight {
+    background-color: #676241;;
+    
+}
 
 .navbar a {
     text-decoration: none;
-    font-size: 50px;
+    font-size: 2rem;
     color: #c57a3c;
 }
 
@@ -22,9 +31,7 @@
 
 .navbar p {
     text-align: center;
-    font-size: 50px;
     color: #c57a3c;
-    display: block;
 }
 
 #logoutbtn {
@@ -179,7 +186,9 @@ button.removebtn {
 #bag {
     text-align: center;
 }
-
+.card-title {
+    margin: 0;
+}
 input {
     font-size: initial;
 }
@@ -189,13 +198,12 @@ input {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0 1.5rem;
+    padding: 0 1rem;
 }
 
 #categories-label {
-    width: 30%;
     text-align: left;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 #categories {
@@ -241,7 +249,7 @@ input {
     margin-bottom: 1rem;
 }
 
-.btn {
+.mybtn {
     cursor: pointer;
     margin-top: 1.5rem;
     padding: 0.5rem 1rem;
@@ -254,7 +262,7 @@ input {
     border: none;
 }
 
-.btn:hover {
+.mybtn:hover {
     background-color: #252525;
     color: white;
 }
@@ -269,11 +277,12 @@ input {
 
 
 .gear-bank {
-    border: 5px solid darkgray;
+    border: 5px solid #7f7b7b;
     display: flex;
     flex-direction: column;
     padding: .5rem;
     margin: 1.5rem 0;
+    background-color: #a9a9a9;
 }
 
 .hide {
@@ -284,14 +293,9 @@ input {
     margin: .5rem;
 }
 
-.dashboardheader {
-
-}
-
 #bankheader {
     text-align: center;
-    text-decoration: underline;
-    color: #51646b;
+    color: #ffffff;
 }
 
 #userinput{
@@ -324,7 +328,7 @@ input {
     flex-wrap: wrap;
     padding: 0.1rem .3rem;
     border: 1px solid grey;
-    background-color: gainsboro;
+    background-color: white;
     box-shadow: 2px 3px 5px;
 }
 
@@ -374,6 +378,7 @@ a:not([href]):not([tabindex]):hover {
 }
 button.close {
     padding: 0 .4rem;
+    margin-left: .5rem;
 }
 
 @media screen and (max-width: 475px) {
@@ -402,6 +407,9 @@ button.close {
     }
     .navbar a, #logoutbtn {
         font-size: 1.2rem;
+    }
+    .navbar p {
+        font-size: 1rem;
     }
     body {
         line-height: 1;
@@ -441,6 +449,9 @@ button.close {
     main,
     nav {
     flex-direction: row;
+    }
+    .mobile-hide {
+        display: none;
     }
 }
 
