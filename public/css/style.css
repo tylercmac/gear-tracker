@@ -18,10 +18,10 @@
     flex-wrap: wrap;
 }
 
-/* button.deleteTrip.btn {
-    margin: 1rem auto;
-    border-radius: .5rem;
-} */
+button.deleteTrip.btn {
+    position: relative;
+    margin-right: auto;
+}
 
 button.deleteTrip.btn:hover {
     opacity: .7;
@@ -153,7 +153,6 @@ button.indexBtn.loginbtn.btn {
     flex: 2;
     margin-left: 250px;
 }
-
 .dash-heading{
     display: flex;
     justify-content: space-between;
@@ -163,9 +162,26 @@ button.indexBtn.loginbtn.btn {
     height: 5px;
     width: 3px;
 }
-
+.btn-loadout {
+    color: #c57a3c;
+    background-color: #4a4735;
+    border-color: #c57a39
+}
+.btn-loadout:hover {
+    color: #4a4735;
+    background-color: #c57a39;
+    border-color: #4a4735
+}
+.miles {
+    font-style: italic;
+}
 #logo {
     height: 7rem;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1.5rem;
 }
 
 .gearitem:hover {
@@ -176,10 +192,6 @@ button.indexBtn.loginbtn.btn {
 
 #trip-name{
     background-color: #58752B;
-}
-
-#bankheader{
-    background-color: white;
 }
 
 #chartSize{
