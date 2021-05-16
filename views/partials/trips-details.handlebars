@@ -1,17 +1,17 @@
 <div class="card text-center">
-  <div class="card-header">
-    {{distance_mi}} miles
-    <button type='button' class="close delete-trip" aria-label="Close" data-id={{id}}>
+  <div class="card-header d-flex align-items-center justify-content-center">
+    <button type='button' class="btn close delete-trip" aria-label="Close" data-id={{id}}>
       <span aria-hidden="true">&times;</span>
     </button>
+    <h3 class="card-title">{{name}}</h3>
   </div>
   <div class="card-body">
-    <h3 class="card-title">{{name}}</h3>
-    <br>
     <h5 class="card-text">{{location}}</h5>
+    <br>
+    <div class="miles">{{distance_mi}} miles</div>
     <p class="card-text">{{description}}</p>
     <p class="card-text gear-weight" data-id={{id}}></p>
-    <a href="/dashboard/{{id}}" class="btn btn-primary">Trip Loadout</a>
+    <a href="/dashboard/{{id}}" class="btn btn-loadout">Trip Loadout</a>
   </div>
   <div class="card-footer text-muted">
     {{starting_date}} to {{ending_date}}

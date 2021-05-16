@@ -1,5 +1,6 @@
 // const e = require("express");
 
+
 const checkURL = () => {
   let dashURL = window.location.href
   let isDashboard = false;
@@ -86,22 +87,6 @@ checkURL();
 addIcons();
 addTipText();
 
-// const logoutUser = () => {
-//   console.log('clicked!');
-
-//   fetch("/portal/logout", {
-//     method: 'GET',
-//   }).then(res => {
-//     if (res.ok) {
-//       // alert("Logged out successfully!")
-//       location.replace("/")
-//     } else {
-//       alert("You are not logged in!")
-//       console.log(res);
-
-//     }
-//   })
-// }
 
 // When item is chosen from gear bank, it will populate spot on current trip gear list
 const addToTrip = (e) => {
@@ -167,7 +152,7 @@ const updateGearForm = (itemID) => {
       weight.value = data.weight_oz;
       price.value = data.price;
     })
-  let newButton = `<button class="btn updater-button" data-id=${itemID}>Update Item</button>`;
+  let newButton = `<button class="mybtn updater-button" data-id=${itemID}>Update Item</button>`;
   gearBtn.innerHTML = newButton;
 
 }
