@@ -83,7 +83,8 @@
                         <div class='bankitem hide' id='bankdescrip' data-id={{gear.id}}>{{gear.description}}</div>
                         <div class='bankitem addToTrip' id='bankweight' data-id={{gear.id}}>
                             [{{gear.weight_oz}} oz]
-                            <button type="button" class="btn btn-outline-danger close" aria-label="Close" data-id={{gear.id}}>
+                            <button type="button" class="btn btn-outline-danger close" aria-label="Close"
+                                data-id={{gear.id}}>
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -118,7 +119,7 @@
         </form>
 
         <div class="second-box">
-            <div class="currentTripBox" data-id={{currTrip.id}}>
+            {{!-- <div class="currentTripBox" data-id={{currTrip.id}}>
                 <h1 id="trip-name">{{currTrip.name}}</h1>
                 <p id="trip-location">{{currTrip.location}}</p>
                 <div id="trip-dets">
@@ -130,6 +131,15 @@
                     <div id="right-dets">
                         <p id="trip-descr">{{currTrip.description}}</p>
                     </div>
+                </div>
+            </div> --}}
+            <div class="card border-dark mb-3 trip-details" data-id={{currTrip.id}}>
+                <div class="card-header">{{currTrip.name}}</div>
+                <div class="card-body text-dark">
+                    <h5 class="card-title">{{currTrip.location}}</h5>
+                        <p class="card-text">Length: <strong>{{currTrip.distance_mi}} miles</strong></p>
+                        <p class="card-text">Start Date: <strong>{{currTrip.starting_date}}</strong></p>
+                        <p class="card-text">End Date: <strong>{{currTrip.ending_date}}</strong></p>
                 </div>
             </div>
             <h3 class="tripLoadout">Trip Loadout</h3>
