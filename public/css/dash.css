@@ -3,6 +3,10 @@
     padding: 0;
     font-family: 'Noto Sans', sans-serif;
 }
+.navbar-toggler-icon {
+    width: 1rem;
+    height: 1em;
+}
 
 .nav-link {
     color: #c57a3c;
@@ -17,6 +21,10 @@
 .bg-gearlight {
     background-color: #676241;;
     
+}
+
+.accordian-button {
+    background-color: grey;
 }
 
 .navbar a {
@@ -52,10 +60,7 @@
 
 .dashmain {
     background-image: url(../images/dashbackground.jpg);
-    background-size: cover;
     display: flex;
-    height: 100vh;
-    width: 100vw;
 }
 
 .button {

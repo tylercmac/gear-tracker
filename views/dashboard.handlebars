@@ -7,7 +7,7 @@
     <div id="nav-bar">
         <ul class="navbar mobile-hide">
             <li class="nav-item">
-                <a class="nav-link" href="#tripForm">New Trip</a>
+                <a class="nav-link new-trip">New Trip</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/trips">{{userGear.username}}'s Trips</a>
@@ -20,7 +20,7 @@
 
     <div class="collapse" id="navbarToggleExternalContent">
         <div class="bg-gearlight p-4">
-            <a class="nav-link navbar-brand" href="#tripForm">New Trip</a>
+            <a class="nav-link navbar-brand new-trip">New Trip</a>
             <a class="nav-link navbar-brand" href="/trips">{{userGear.username}}'s Trips</a>
             <a class="nav-link navbar-brand" href="/portal/logout">Logout</a>
         </div>
@@ -83,7 +83,8 @@
                         <div class='bankitem hide' id='bankdescrip' data-id={{gear.id}}>{{gear.description}}</div>
                         <div class='bankitem addToTrip' id='bankweight' data-id={{gear.id}}>
                             [{{gear.weight_oz}} oz]
-                            <button type="button" class="btn btn-outline-danger close" aria-label="Close" data-id={{gear.id}}>
+                            <button type="button" class="btn btn-outline-danger close" aria-label="Close"
+                                data-id={{gear.id}}>
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -118,39 +119,26 @@
         </form>
 
         <div class="second-box">
-            <div class="currentTripBox" data-id={{currTrip.id}}>
-                <h1 id="trip-name">{{currTrip.name}}</h1>
-                <p id="trip-location">{{currTrip.location}}</p>
-                <div id="trip-dets">
-                    <div id="left-dets">
-                        <p>Length: <strong>{{currTrip.distance_mi}} miles</strong></p>
-                        <p>Start Date: <strong>{{currTrip.starting_date}}</strong></p>
-                        <p>End Date: <strong>{{currTrip.ending_date}}</strong></p>
-                    </div>
-                    <div id="right-dets">
-                        <p id="trip-descr">{{currTrip.description}}</p>
-                    </div>
+            <div class="card border-dark mb-3 trip-details currentTripBox" data-id={{currTrip.id}}>
+                <div class="card-header">{{currTrip.name}}</div>
+                <div class="card-body text-dark">
+                    <h5 class="card-title">{{currTrip.location}}</h5>
+                    <p class="card-text">Length: <strong>{{currTrip.distance_mi}} miles</strong></p>
+                    <p class="card-text">Start Date: <strong>{{currTrip.starting_date}}</strong></p>
+                    <p class="card-text">End Date: <strong>{{currTrip.ending_date}}</strong></p>
                 </div>
             </div>
             <h3 class="tripLoadout">Trip Loadout</h3>
             <div id="trip-loadout-box">
                 {{#each currTrip.GearItems as |gear|}}
-                <div class="tripitem" data-id={{gear.id}}>
-                    <h4 class="trip-item-detail" id="generalName">{{gear.general_name}}</h4>
-                    <div class="trip-item-name-descr">
-                        <p class="trip-item-detail" id="productName">{{gear.product_name}}</p>
-                    </div>
-                    <p class="trip-item-detail" id="weightoz">{{gear.weight_oz}} oz</p>
-                    <button class="removebtn mybtn" data-id={{gear.id}}>Remove</button>
-                    <p class="trip-item-detail" id="itemdescription">{{gear.description}}</p>
-                </div>
+                {{> loadout-gear}}
                 {{/each}}
             </div>
         </div>
 
 
         <div id="chartSize">
-            <h3 id="packTotal"></h3>
+            <h3 id="packTotal" class="text-primary pt-1"></h3>
             <canvas id="myChart" width="150" height="150"></canvas>
             <iframe src="https://widgetscode.com/wc/uc/all?skin=blk0" style="width:320px;height:273px;margin:0;border:0"
                 class="converter mobile-hide"></iframe>
